@@ -249,4 +249,123 @@ section {
     margin: 0;
 }
 
+/* =========================================
+   10. SOCIAL MEDIA GALLERY
+   ========================================= */
+.social-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.social-header h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.social-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.social-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 15px rgba(26, 54, 34, 0.05);
+}
+
+.social-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(26, 54, 34, 0.15);
+}
+
+/* =========================================
+   11. NEWSLETTER / VIP ACCESS
+   ========================================= */
+.newsletter-section {
+    background-color: rgba(26, 54, 34, 0.03); /* Extremely soft green tint */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.newsletter-input {
+    padding: 15px 25px;
+    width: 300px;
+    border: 1px solid rgba(26, 54, 34, 0.2);
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.newsletter-input:focus {
+    border-color: var(--forest-green);
+}
+
+/* =========================================
+   12. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--forest-green);
+    color: var(--bg-pearl);
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+    color: rgba(253, 253, 253, 0.7);
+}
+
+footer a {
+    color: var(--bg-pearl);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =========================================
+   13. FLOATING WHATSAPP BUTTON
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
 
