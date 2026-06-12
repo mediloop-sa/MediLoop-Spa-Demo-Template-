@@ -16,7 +16,7 @@
         <a href="journal.html">Journal</a>
     </nav>
 
-    <!-- The Hero Landing Section with Background Image -->
+    <!-- The Hero Landing Section -->
     <div class="hero">
         <div class="glass-box">
             <h1>Breathe. Relax. Restore.</h1>
@@ -25,21 +25,87 @@
         </div>
     </div>
 
-    <!-- The Solid White Metrics Section -->
-    <div class="metrics">
-        <div class="metric-item">
-            <div class="metric-number">10+</div>
-            <div>Years of Excellence</div>
+    <!-- The Animated Circular Metrics Section -->
+    <section class="metrics-section">
+        <div class="metrics-header">
+            <h2>Measurable Sanctuary Impact</h2>
+            <p>Real-world data driving growth, retention, and seamless clinical flow across our premier locations.</p>
         </div>
-        <div class="metric-item">
-            <div class="metric-number">15k</div>
-            <div>Happy Clients</div>
+
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="metric-card">
+                <div>
+                    <!-- data-target is the final number, data-suffix adds the symbol -->
+                    <h3 class="metric-number" data-target="85" data-suffix="%">0</h3>
+                    <h4 class="metric-label">Client Retention</h4>
+                    <p class="metric-desc">Automated check-ins and hyper-personalized ritual sequencing.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="metric-card">
+                <div>
+                    <h3 class="metric-number" data-target="40" data-prefix="+" data-suffix="%">0</h3>
+                    <h4 class="metric-label">Revenue Growth</h4>
+                    <p class="metric-desc">Smart optimization dynamically fills off-peak treatment rooms.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="metric-card">
+                <div>
+                    <h3 class="metric-number" data-target="100" data-suffix="%">0</h3>
+                    <h4 class="metric-label">Compliant Flow</h4>
+                    <p class="metric-desc">Encryption meets absolute serenity. Patient data synced flawlessly.</p>
+                </div>
+            </div>
         </div>
-        <div class="metric-item">
-            <div class="metric-number">100%</div>
-            <div>Organic Products</div>
-        </div>
-    </div>
+    </section>
+
+    <!-- THE SCROLL ANIMATION SCRIPT -->
+    <script>
+        // Find all the numbers we want to animate
+        const counters = document.querySelectorAll('.metric-number');
+        
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const prefix = counter.getAttribute('data-prefix') || '';
+                
+                const updateCount = () => {
+                    // Get current number without symbols
+                    const textContent = counter.innerText.replace(/[^0-9]/g, '');
+                    const count = +textContent;
+                    const increment = target / 40; // Speed of counting
+
+                    if (count < target) {
+                        counter.innerText = prefix + Math.ceil(count + increment) + suffix;
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = prefix + target + suffix;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Sensor to check when user scrolls to the section
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, { threshold: 0.3 }); // Triggers when 30% of the section is visible
+
+        const metricsSection = document.querySelector('.metrics-section');
+        if(metricsSection) {
+            observer.observe(metricsSection);
+        }
+    </script>
 
 </body>
 </html>
