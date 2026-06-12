@@ -1,1 +1,150 @@
-<h1>My Spa Demo</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Spa & Wellness</title>
+    <style>
+        /* Base Styles & Spa Colors */
+        :root {
+            --primary-bg: #FAFAF7; /* Soft cream */
+            --accent-green: #8A9A86; /* Sage green */
+            --text-dark: #2C3E35;
+            --text-light: #F0F0F0;
+        }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: var(--primary-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Reusable Section Styles */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        
+        /* 1. Hero / Landing Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--accent-green);
+            color: var(--text-light);
+            margin-top: 50px;
+            max-width: 100%;
+        }
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: var(--primary-bg);
+            color: var(--accent-green);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#explore">Explore</a>
+        <a href="#journal">Journal</a>
+    </nav>
+
+    <!-- 1. Detailed Landing Page (Hero) -->
+    <section id="home">
+        <h1>Breathe. Relax. Restore.</h1>
+        <p>Experience the ultimate sanctuary for your mind, body, and soul.</p>
+        <a href="https://mediloop.co.za" class="btn">Book a Treatment</a>
+    </section>
+
+    <!-- 2. About Us -->
+    <section id="about">
+        <h2>Our Philosophy</h2>
+        <p>We believe that wellness is a journey, not a destination. Our expert therapists use organic, locally-sourced ingredients to craft holistic treatments designed to bring you back to your center.</p>
+    </section>
+
+    <!-- 3. Services -->
+    <section id="services">
+        <h2>Signature Treatments</h2>
+        <p><strong>Deep Tissue Massage:</strong> 60 Min - Relieve chronic tension.</p>
+        <p><strong>Radiance Facial:</strong> 45 Min - Glow from the inside out.</p>
+        <p><strong>Aromatherapy Wrap:</strong> 90 Min - Full body detoxification.</p>
+    </section>
+
+    <!-- 4. Explore -->
+    <section id="explore">
+        <h2>Explore the Spa</h2>
+        <p>[ Beautiful gallery of the spa rooms, products, and environment will go here. ]</p>
+    </section>
+
+    <!-- 5. Blog / Curated Links -->
+    <section id="journal">
+        <h2>Wellness Journal</h2>
+        <p><em>Discover our favorite articles on living a balanced life.</em></p>
+        <p><a href="#" style="color: var(--accent-green);">5 Ways to Maintain Your Post-Massage Glow</a></p>
+        <p><a href="#" style="color: var(--accent-green);">The Benefits of Eucalyptus in the Shower</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Luxury Spa Demo. All rights reserved.</p>
+        <p>Powered by MediLoop Websites</p>
+    </footer>
+
+</body>
+</html>
+
