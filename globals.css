@@ -17,7 +17,8 @@ body {
     color: var(--forest-green);
     padding-top: 60px; 
     line-height: 1.8;
-    overflow-x: hidden; /* Prevents horizontal scrollbar on the whole page */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, nav a, .btn, .metric-number {
@@ -36,24 +37,22 @@ nav {
     text-align: center;
     z-index: 1000;
 }
-nav a { margin: 0 12px; text-decoration: none; color: var(--forest-green); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+nav a { margin: 0 15px; text-decoration: none; color: var(--forest-green); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
 
 /* --- HERO SECTION --- */
 .hero-plain {
-    position: relative;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Using a soft spa placeholder image */
-    background: linear-gradient(rgba(253, 253, 253, 0.6), rgba(253, 253, 253, 0.6)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: linear-gradient(rgba(253, 253, 253, 0.5), rgba(253, 253, 253, 0.5)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
     padding: 20px;
 }
 .hero-plain h1 {
     font-size: 3rem;
-    font-weight: 200; /* Thin Montserrat */
+    font-weight: 200; 
     margin-bottom: 10px;
     letter-spacing: 4px;
 }
@@ -61,7 +60,7 @@ nav a { margin: 0 12px; text-decoration: none; color: var(--forest-green); font-
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 40px;
-    color: var(--text-muted);
+    color: var(--forest-green);
 }
 .btn {
     display: inline-block;
@@ -73,142 +72,164 @@ nav a { margin: 0 12px; text-decoration: none; color: var(--forest-green); font-
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 600;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.btn:hover { transform: translateY(-3px); }
+.btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(26, 54, 34, 0.2); 
+}
 
 /* --- WELCOME SECTION --- */
 .welcome-section {
-    max-width: 1000px;
-    margin: 80px auto;
+    max-width: 1100px;
+    margin: 100px auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
 }
 .welcome-img {
     flex: 1;
     border-radius: 20px;
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    object-fit: cover;
 }
 .welcome-text { flex: 1; }
-.welcome-text h2 { font-weight: 400; font-size: 2rem; margin-bottom: 20px; }
+.welcome-text h2 { font-weight: 400; font-size: 2.2rem; margin-bottom: 20px; }
 
-/* --- UPGRADED METRICS SECTION (ONBOARDING IMG + GLASS BOX) --- */
+/* --- METRICS SECTION (GLASSMORPHIC) --- */
 .metrics-section {
-    padding: 100px 20px;
+    padding: 120px 20px;
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Onboarding.jpg') center/cover;
+    background: linear-gradient(rgba(253, 253, 253, 0.4), rgba(253, 253, 253, 0.4)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Onboarding.jpg') center/cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
 }
 .metrics-glass-box {
-    background: rgba(255, 255, 255, 0.45);
-    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.55);
+    max-width: 1100px;
     width: 100%;
     padding: 60px 40px;
     border-radius: 32px;
-    box-shadow: 0 20px 40px rgba(26, 54, 34, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(26, 54, 34, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(26, 54, 34, 0.15);
     text-align: center;
 }
-.metrics-glass-box h2 {
+.shimmer-text {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     background: linear-gradient(90deg, #1A3622, #5C8065, #1A3622);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fluidGradient 4s ease infinite;
 }
-@keyframes fluidGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes fluidGradient { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
 .cards-grid {
-    display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+    display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 40px;
 }
 .metric-card {
-    width: 260px; height: 260px; border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    width: 280px; height: 280px; border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(26, 54, 34, 0.1);
     display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 30px; box-sizing: border-box;
     transition: all 0.5s ease;
 }
-.metric-card:hover { transform: translateY(-8px); border-color: rgba(26, 54, 34, 0.4); }
-.metric-number { font-size: 2.8rem; font-weight: 300; margin: 0 0 5px 0; }
-.metric-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0; color: #4A7055; }
+.metric-card:hover { transform: translateY(-8px); border-color: rgba(26, 54, 34, 0.4); box-shadow: 0 10px 25px rgba(26, 54, 34, 0.1); }
+.metric-number { font-size: 3rem; font-weight: 300; margin: 0 0 5px 0; color: var(--forest-green); }
+.metric-label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0; color: #4A7055; }
 .metric-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
 /* --- SIGNATURE RITUALS (SCROLLABLE) --- */
-.rituals-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
-.rituals-section h2 { text-align: center; font-size: 2.2rem; font-weight: 400; margin-bottom: 40px; }
+.rituals-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
+.rituals-section h2 { text-align: center; font-size: 2.2rem; font-weight: 400; margin-bottom: 50px; }
 .rituals-container {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     overflow-x: auto;
-    padding-bottom: 20px;
-    scroll-snap-type: x mandatory; /* Snaps cards into place on mobile */
+    padding-bottom: 30px;
+    scroll-snap-type: x mandatory; 
 }
+/* Hides scrollbar for cleaner look */
+.rituals-container::-webkit-scrollbar { height: 8px; }
+.rituals-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.rituals-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
 .ritual-card {
-    min-width: 300px;
+    min-width: 320px;
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
     scroll-snap-align: start;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
-.ritual-img { width: 100%; height: 200px; object-fit: cover; }
-.ritual-info { padding: 20px; }
-.ritual-info h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
-.ritual-meta { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; color: #4A7055; margin-bottom: 10px;}
+.ritual-img { width: 100%; height: 220px; object-fit: cover; }
+.ritual-info { padding: 25px; }
+.ritual-info h3 { margin: 0 0 15px 0; font-size: 1.2rem; }
+.ritual-meta { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; color: var(--forest-green); margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;}
 .ritual-info p { font-size: 0.9rem; margin: 0; color: var(--text-muted); }
 
 /* --- REVIEWS / IN THE PRESS --- */
-.reviews-section { padding: 80px 20px; background-color: rgba(26, 54, 34, 0.03); overflow: hidden; }
+.reviews-section { padding: 100px 20px; background-color: rgba(26, 54, 34, 0.03); overflow: hidden; }
 .reviews-section h2 { text-align: center; margin-bottom: 50px; font-weight: 400; font-size: 2.2rem; }
 .reviews-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
 .review-card {
-    background: #fff; padding: 30px; border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    opacity: 0; /* Hidden by default for animation */
-    transform: translateX(100px); /* Pushed to the right */
+    background: #fff; padding: 40px; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    opacity: 0; 
+    transform: translateX(100px); 
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* The class Javascript will add to make them slide in */
 .review-card.show { opacity: 1; transform: translateX(0); }
-.review-stars { color: #D4AF37; margin-bottom: 10px; font-size: 1.2rem; }
-.review-text { font-style: italic; margin-bottom: 15px; }
+.review-stars { color: #D4AF37; margin-bottom: 15px; font-size: 1.3rem; }
+.review-text { font-style: italic; margin-bottom: 20px; font-size: 1.05rem;}
 .review-author { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
 
 /* --- SOCIALS SECTION --- */
-.socials-section { padding: 60px 20px; text-align: center; }
-.socials-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 20px; }
-.social-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+.socials-section { padding: 80px 20px; text-align: center; }
+.socials-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 30px; }
+.social-buttons { display: flex; justify-content: center; gap: 20px; }
 .social-btn {
-    padding: 12px 25px; border: 1px solid var(--forest-green);
+    padding: 12px 30px; border: 1px solid var(--forest-green);
     color: var(--forest-green); text-decoration: none; border-radius: 30px;
     font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+    transition: all 0.3s ease;
 }
+.social-btn:hover { background: var(--forest-green); color: var(--bg-pearl); }
 
-/* --- DARK FOOTER --- */
+/* --- STRICT DARK FOOTER --- */
 .footer-dark {
-    background-color: #0b0b0b;
+    background-color: #000000;
     color: #ffffff;
-    padding: 60px 20px 20px 20px;
+    padding: 80px 20px 30px 20px;
     font-size: 0.9rem;
 }
 .footer-grid {
-    max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px;
+    max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 50px;
 }
-.footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 1rem; }
-.footer-col p, .footer-col a { color: #a0a0a0; margin: 5px 0; text-decoration: none; display: block; }
-.footer-bottom { border-top: 1px solid #222; padding-top: 20px; text-align: center; color: #666; font-size: 0.8rem; }
-.footer-bottom a { color: #a0a0a0; text-decoration: none; }
+.footer-col h4 { color: #ffffff; margin-bottom: 20px; font-size: 1.1rem; letter-spacing: 2px;}
+.footer-col p, .footer-col a { color: #a0a0a0; margin: 8px 0; text-decoration: none; display: block; transition: color 0.3s;}
+.footer-col a:hover { color: #ffffff; }
+.footer-bottom { border-top: 1px solid #222; padding-top: 30px; text-align: center; color: #666; font-size: 0.8rem; letter-spacing: 1px; }
+.footer-bottom a { color: #ffffff; text-decoration: none; font-weight: 600;}
 
-/* Responsive Adjustments for Mobile */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .welcome-section { flex-direction: column; text-align: center; }
     .footer-grid { flex-direction: column; text-align: center; }
+    .hero-plain h1 { font-size: 2.2rem; }
+    .metrics-glass-box { padding: 40px 20px; }
+    .cards-grid { gap: 20px; }
+    .metric-card { width: 240px; height: 240px; padding: 20px;}
+    .social-buttons { flex-direction: column; align-items: center; }
+    .social-btn { width: 200px; }
 }
