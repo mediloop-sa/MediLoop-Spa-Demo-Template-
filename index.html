@@ -3,148 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Spa & Wellness</title>
+    <title>Luxury Spa | Home</title>
     <style>
-        /* Base Styles & Spa Colors */
+        /* The New Color Palette */
         :root {
-            --primary-bg: #FAFAF7; /* Soft cream */
-            --accent-green: #8A9A86; /* Sage green */
-            --text-dark: #2C3E35;
-            --text-light: #F0F0F0;
+            --bg-pearl: #FDFDFD; /* Pearl White */
+            --forest-green: #1A3622; /* Deep Forest Green */
         }
+        
         body {
             margin: 0;
             font-family: 'Georgia', serif;
-            background-color: var(--primary-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-pearl);
+            color: var(--forest-green);
+            /* Adds space at top so the fixed bar doesn't cover text */
+            padding-top: 80px; 
         }
         
-        /* Navigation Bar */
+        /* The Universal Fixed Topbar */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background-color: white;
+            background-color: var(--bg-pearl);
+            border-bottom: 1px solid rgba(26, 54, 34, 0.1);
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
+            
+            /* Allows horizontal scrolling on tiny phones if needed */
+            overflow-x: auto;
+            white-space: nowrap;
         }
+        
         nav a {
-            margin: 0 15px;
+            margin: 0 12px;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--forest-green);
             font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-weight: bold;
         }
 
-        /* Reusable Section Styles */
+        /* Page Content Styling */
         section {
-            padding: 100px 20px;
+            padding: 60px 20px;
             text-align: center;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
-        h2 {
-            font-size: 2.5rem;
+        
+        h1 {
+            font-size: 3rem;
             font-weight: normal;
             margin-bottom: 20px;
         }
         
-        /* 1. Hero / Landing Section */
-        #home {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--accent-green);
-            color: var(--text-light);
-            margin-top: 50px;
-            max-width: 100%;
-        }
-        #home h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
+        /* The Buttons */
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
-            background-color: var(--primary-bg);
-            color: var(--accent-green);
+            margin-top: 20px;
+            padding: 15px 35px;
+            background-color: var(--forest-green);
+            color: var(--bg-pearl);
             text-decoration: none;
-            font-size: 1.1rem;
             border-radius: 30px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
+            letter-spacing: 1.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <!-- The Topbar Menu -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#explore">Explore</a>
-        <a href="#journal">Journal</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="explore.html">Explore</a>
+        <a href="journal.html">Journal</a>
     </nav>
 
-    <!-- 1. Detailed Landing Page (Hero) -->
-    <section id="home">
+    <!-- The Main Landing Section -->
+    <section>
         <h1>Breathe. Relax. Restore.</h1>
         <p>Experience the ultimate sanctuary for your mind, body, and soul.</p>
         <a href="https://mediloop.co.za" class="btn">Book a Treatment</a>
     </section>
 
-    <!-- 2. About Us -->
-    <section id="about">
-        <h2>Our Philosophy</h2>
-        <p>We believe that wellness is a journey, not a destination. Our expert therapists use organic, locally-sourced ingredients to craft holistic treatments designed to bring you back to your center.</p>
-    </section>
-
-    <!-- 3. Services -->
-    <section id="services">
-        <h2>Signature Treatments</h2>
-        <p><strong>Deep Tissue Massage:</strong> 60 Min - Relieve chronic tension.</p>
-        <p><strong>Radiance Facial:</strong> 45 Min - Glow from the inside out.</p>
-        <p><strong>Aromatherapy Wrap:</strong> 90 Min - Full body detoxification.</p>
-    </section>
-
-    <!-- 4. Explore -->
-    <section id="explore">
-        <h2>Explore the Spa</h2>
-        <p>[ Beautiful gallery of the spa rooms, products, and environment will go here. ]</p>
-    </section>
-
-    <!-- 5. Blog / Curated Links -->
-    <section id="journal">
-        <h2>Wellness Journal</h2>
-        <p><em>Discover our favorite articles on living a balanced life.</em></p>
-        <p><a href="#" style="color: var(--accent-green);">5 Ways to Maintain Your Post-Massage Glow</a></p>
-        <p><a href="#" style="color: var(--accent-green);">The Benefits of Eucalyptus in the Shower</a></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Luxury Spa Demo. All rights reserved.</p>
-        <p>Powered by MediLoop Websites</p>
-    </footer>
-
 </body>
 </html>
-
