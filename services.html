@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Spa | Services</title>
+    <style>
+        /* Universal Palette and Topbar */
+        :root {
+            --bg-pearl: #FDFDFD;
+            --forest-green: #1A3622;
+        }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-pearl);
+            color: var(--forest-green);
+            padding-top: 80px; 
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-pearl);
+            border-bottom: 1px solid rgba(26, 54, 34, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1000;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: var(--forest-green);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        /* Services Menu Styling */
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+        
+        /* Treatment Items */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid rgba(26, 54, 34, 0.2);
+            padding: 15px 0;
+            margin-bottom: 10px;
+        }
+        .treatment-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .treatment-price {
+            font-size: 1.1rem;
+        }
+        .treatment-desc {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            color: #3A5642; /* Slightly lighter green for descriptions */
+            line-height: 1.5;
+        }
+
+        /* Booking Button */
+        .btn-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--forest-green);
+            color: var(--bg-pearl);
+            text-decoration: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Universal Topbar Menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="explore.html">Explore</a>
+        <a href="journal.html">Journal</a>
+    </nav>
+
+    <!-- The Services Menu -->
+    <section>
+        <h1>Signature Treatments</h1>
+
+        <div>
+            <div class="menu-item">
+                <span class="treatment-name">Deep Tissue Massage (60 Min)</span>
+                <span class="treatment-price">R850</span>
+            </div>
+            <div class="treatment-desc">Intensive therapy targeting deep muscle layers to relieve chronic tension and soreness.</div>
+        </div>
+
+        <div>
+            <div class="menu-item">
+                <span class="treatment-name">Radiance Botanical Facial (45 Min)</span>
+                <span class="treatment-price">R650</span>
+            </div>
+            <div class="treatment-desc">A revitalizing treatment using wild-harvested botanicals to restore your natural glow.</div>
+        </div>
+
+        <div>
+            <div class="menu-item">
+                <span class="treatment-name">Full Body Detox Wrap (90 Min)</span>
+                <span class="treatment-price">R1200</span>
+            </div>
+            <div class="treatment-desc">An immersive thermal wrap using mineral-rich clay to purify and deeply hydrate the skin.</div>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://mediloop.co.za" class="btn">Book Now</a>
+        </div>
+    </section>
+
+</body>
+</html>
