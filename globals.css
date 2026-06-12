@@ -1,0 +1,148 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+
+/* 1. Global Color Palette */
+:root {
+    --bg-pearl: #FDFDFD;
+    --forest-green: #1A3622;
+    --text-muted: #3A5642;
+}
+
+/* 2. Base Page Styling (Open Sans for Paragraphs) */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-pearl);
+    color: var(--forest-green);
+    padding-top: 60px; /* Adjusted for navigation */
+    line-height: 1.8;
+}
+
+/* 3. Typography (Montserrat for Headings/Links) */
+h1, h2, h3, nav a, .btn, .metric-number {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* 4. Universal Top Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 253, 253, 0.95); /* Slightly transparent white */
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(26, 54, 34, 0.1);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: var(--forest-green);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* 5. The Hero Section (Landing Image) */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+/* 6. The Glassmorphic Box */
+.glass-box {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* The frosted glass effect */
+    -webkit-backdrop-filter: blur(12px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Soft border edge */
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Soft shadow underneath */
+}
+
+.glass-box h1 {
+    font-size: 2.8rem;
+    margin-top: 0;
+    color: var(--forest-green);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Makes text pop off the glass */
+}
+
+.glass-box p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* 7. Metrics Section (White Background Below Hero) */
+.metrics {
+    background-color: #FFFFFF;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.metric-item {
+    margin: 15px;
+    min-width: 150px;
+}
+
+.metric-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--forest-green);
+    margin-bottom: 5px;
+}
+
+/* 8. Standard Sections & Buttons */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background-color: var(--forest-green);
+    color: var(--bg-pearl);
+    text-decoration: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Services Menu Adjustments */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(26, 54, 34, 0.2);
+    padding: 15px 0;
+    margin-bottom: 10px;
+}
+.treatment-name { font-weight: 600; font-size: 1.1rem; }
+.treatment-desc { font-size: 0.95rem; margin-top: 5px; color: var(--text-muted); text-align: left;}
