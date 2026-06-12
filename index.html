@@ -4,80 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Spa | Home</title>
-    <style>
-        /* The New Color Palette */
-        :root {
-            --bg-pearl: #FDFDFD; /* Pearl White */
-            --forest-green: #1A3622; /* Deep Forest Green */
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: var(--bg-pearl);
-            color: var(--forest-green);
-            /* Adds space at top so the fixed bar doesn't cover text */
-            padding-top: 80px; 
-        }
-        
-        /* The Universal Fixed Topbar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--bg-pearl);
-            border-bottom: 1px solid rgba(26, 54, 34, 0.1);
-            padding: 20px 0;
-            text-align: center;
-            z-index: 1000;
-            
-            /* Allows horizontal scrolling on tiny phones if needed */
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-        
-        nav a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: var(--forest-green);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        /* Page Content Styling */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-        
-        /* The Buttons */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 35px;
-            background-color: var(--forest-green);
-            color: var(--bg-pearl);
-            text-decoration: none;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-    </style>
+    <link rel="stylesheet" href="globals.css">
 </head>
 <body>
 
-    <!-- The Topbar Menu -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -86,12 +16,30 @@
         <a href="journal.html">Journal</a>
     </nav>
 
-    <!-- The Main Landing Section -->
-    <section>
-        <h1>Breathe. Relax. Restore.</h1>
-        <p>Experience the ultimate sanctuary for your mind, body, and soul.</p>
-        <a href="https://mediloop.co.za" class="btn">Book a Treatment</a>
-    </section>
+    <!-- The Hero Landing Section with Background Image -->
+    <div class="hero">
+        <div class="glass-box">
+            <h1>Breathe. Relax. Restore.</h1>
+            <p>Experience the ultimate sanctuary for your mind, body, and soul.</p>
+            <a href="https://mediloop.co.za" class="btn">Book a Treatment</a>
+        </div>
+    </div>
+
+    <!-- The Solid White Metrics Section -->
+    <div class="metrics">
+        <div class="metric-item">
+            <div class="metric-number">10+</div>
+            <div>Years of Excellence</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">15k</div>
+            <div>Happy Clients</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-number">100%</div>
+            <div>Organic Products</div>
+        </div>
+    </div>
 
 </body>
 </html>
