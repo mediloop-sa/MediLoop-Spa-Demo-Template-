@@ -1,371 +1,214 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+/* =========================================
+   MASTER SPA TEMPLATE STYLES
+   ========================================= */
 
-/* 1. Global Color Palette */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Open+Sans:wght@400;600&display=swap');
+
 :root {
     --bg-pearl: #FDFDFD;
     --forest-green: #1A3622;
     --text-muted: #3A5642;
 }
 
-/* 2. Base Page Styling (Open Sans for Paragraphs) */
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-pearl);
     color: var(--forest-green);
-    padding-top: 60px; /* Adjusted for navigation */
+    padding-top: 60px; 
     line-height: 1.8;
+    overflow-x: hidden; /* Prevents horizontal scrollbar on the whole page */
 }
 
-/* 3. Typography (Montserrat for Headings/Links) */
-h1, h2, h3, nav a, .btn, .metric-number {
+h1, h2, h3, h4, nav a, .btn, .metric-number {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
 }
 
-/* 4. Universal Top Navigation Bar */
+/* --- NAVIGATION --- */
 nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(253, 253, 253, 0.95); /* Slightly transparent white */
+    top: 0; left: 0; width: 100%;
+    background-color: rgba(253, 253, 253, 0.95);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid rgba(26, 54, 34, 0.1);
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
-    overflow-x: auto;
-    white-space: nowrap;
 }
+nav a { margin: 0 12px; text-decoration: none; color: var(--forest-green); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
 
-nav a {
-    margin: 0 12px;
-    text-decoration: none;
-    color: var(--forest-green);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-/* 5. The Hero Section (Landing Image) */
-.hero {
+/* --- HERO SECTION --- */
+.hero-plain {
     position: relative;
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Background.jpg');
-    background-size: cover;
-    background-position: center;
+    text-align: center;
+    /* Using a soft spa placeholder image */
+    background: linear-gradient(rgba(253, 253, 253, 0.6), rgba(253, 253, 253, 0.6)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
     padding: 20px;
 }
-
-/* 6. The Glassmorphic Box */
-.glass-box {
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-    backdrop-filter: blur(12px); /* The frosted glass effect */
-    -webkit-backdrop-filter: blur(12px); /* For Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Soft border edge */
-    border-radius: 20px;
-    padding: 50px 40px;
-    text-align: center;
-    max-width: 600px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Soft shadow underneath */
+.hero-plain h1 {
+    font-size: 3rem;
+    font-weight: 200; /* Thin Montserrat */
+    margin-bottom: 10px;
+    letter-spacing: 4px;
 }
-
-.glass-box h1 {
-    font-size: 2.8rem;
-    margin-top: 0;
-    color: var(--forest-green);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Makes text pop off the glass */
-}
-
-.glass-box p {
+.hero-quote {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 40px;
+    color: var(--text-muted);
 }
-
-/* 7. Metrics Section (White Background Below Hero) */
-.metrics {
-    background-color: #FFFFFF;
-    padding: 60px 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.metric-item {
-    margin: 15px;
-    min-width: 150px;
-}
-
-.metric-number {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--forest-green);
-    margin-bottom: 5px;
-}
-
-/* 8. Standard Sections & Buttons */
-section {
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.btn-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 15px 35px;
+    padding: 15px 40px;
     background-color: var(--forest-green);
     color: var(--bg-pearl);
     text-decoration: none;
     border-radius: 30px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    transition: transform 0.3s;
 }
+.btn:hover { transform: translateY(-3px); }
 
-/* Services Menu Adjustments */
-.menu-item {
+/* --- WELCOME SECTION --- */
+.welcome-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid rgba(26, 54, 34, 0.2);
-    padding: 15px 0;
-    margin-bottom: 10px;
+    align-items: center;
+    gap: 50px;
 }
-.treatment-name { font-weight: 600; font-size: 1.1rem; }
-.treatment-desc { font-size: 0.95rem; margin-top: 5px; color: var(--text-muted); text-align: left;}
+.welcome-img {
+    flex: 1;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.welcome-text { flex: 1; }
+.welcome-text h2 { font-weight: 400; font-size: 2rem; margin-bottom: 20px; }
 
-/* =========================================
-   9. INTERACTIVE METRICS SECTION (CIRCLES)
-   ========================================= */
-
+/* --- UPGRADED METRICS SECTION (ONBOARDING IMG + GLASS BOX) --- */
 .metrics-section {
     padding: 100px 20px;
-    background-color: var(--bg-pearl);
     position: relative;
-    overflow: hidden;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Onboarding.jpg') center/cover;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
-
-.metrics-header {
+.metrics-glass-box {
+    background: rgba(255, 255, 255, 0.45);
+    max-width: 1000px;
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(26, 54, 34, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(26, 54, 34, 0.15);
     text-align: center;
-    max-width: 800px;
-    margin-bottom: 60px;
 }
-
-/* Shimmering Gradient Title */
-.metrics-header h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    /* Adapted to Spa Colors (Forest to Sage) */
+.metrics-glass-box h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
     background: linear-gradient(90deg, #1A3622, #5C8065, #1A3622);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fluidGradient 4s ease infinite;
 }
-
-@keyframes fluidGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.metrics-header p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-}
-
-/* The Circular Cards Grid */
+@keyframes fluidGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 .cards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    max-width: 1200px;
-    width: 100%;
+    display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
 }
-
 .metric-card {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(26, 54, 34, 0.15);
+    width: 260px; height: 260px; border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(26, 54, 34, 0.1);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 30px; box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+.metric-card:hover { transform: translateY(-8px); border-color: rgba(26, 54, 34, 0.4); }
+.metric-number { font-size: 2.8rem; font-weight: 300; margin: 0 0 5px 0; }
+.metric-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0; color: #4A7055; }
+.metric-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+/* --- SIGNATURE RITUALS (SCROLLABLE) --- */
+.rituals-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+.rituals-section h2 { text-align: center; font-size: 2.2rem; font-weight: 400; margin-bottom: 40px; }
+.rituals-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    box-sizing: border-box;
-    box-shadow: 0 10px 25px rgba(26, 54, 34, 0.03);
-    backdrop-filter: blur(12px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; /* Snaps cards into place on mobile */
+}
+.ritual-card {
+    min-width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.ritual-img { width: 100%; height: 200px; object-fit: cover; }
+.ritual-info { padding: 20px; }
+.ritual-info h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+.ritual-meta { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; color: #4A7055; margin-bottom: 10px;}
+.ritual-info p { font-size: 0.9rem; margin: 0; color: var(--text-muted); }
+
+/* --- REVIEWS / IN THE PRESS --- */
+.reviews-section { padding: 80px 20px; background-color: rgba(26, 54, 34, 0.03); overflow: hidden; }
+.reviews-section h2 { text-align: center; margin-bottom: 50px; font-weight: 400; font-size: 2.2rem; }
+.reviews-grid { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
+.review-card {
+    background: #fff; padding: 30px; border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    opacity: 0; /* Hidden by default for animation */
+    transform: translateX(100px); /* Pushed to the right */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* The class Javascript will add to make them slide in */
+.review-card.show { opacity: 1; transform: translateX(0); }
+.review-stars { color: #D4AF37; margin-bottom: 10px; font-size: 1.2rem; }
+.review-text { font-style: italic; margin-bottom: 15px; }
+.review-author { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
+
+/* --- SOCIALS SECTION --- */
+.socials-section { padding: 60px 20px; text-align: center; }
+.socials-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 20px; }
+.social-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+.social-btn {
+    padding: 12px 25px; border: 1px solid var(--forest-green);
+    color: var(--forest-green); text-decoration: none; border-radius: 30px;
+    font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
 }
 
-/* The Hover Effect */
-.metric-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(26, 54, 34, 0.4);
-    box-shadow: 0 20px 40px rgba(26, 54, 34, 0.12), inset 0 0 20px rgba(26, 54, 34, 0.02);
-}
-
-.metric-number {
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin: 0 0 5px 0;
-    color: var(--forest-green);
-    letter-spacing: -2px;
-}
-
-.metric-label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #4A7055;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 12px 0;
-}
-
-.metric-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* =========================================
-   10. SOCIAL MEDIA GALLERY
-   ========================================= */
-.social-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.social-header h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.social-grid {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.social-img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
-    box-shadow: 0 4px 15px rgba(26, 54, 34, 0.05);
-}
-
-.social-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(26, 54, 34, 0.15);
-}
-
-/* =========================================
-   11. NEWSLETTER / VIP ACCESS
-   ========================================= */
-.newsletter-section {
-    background-color: rgba(26, 54, 34, 0.03); /* Extremely soft green tint */
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.newsletter-input {
-    padding: 15px 25px;
-    width: 300px;
-    border: 1px solid rgba(26, 54, 34, 0.2);
-    border-radius: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.newsletter-input:focus {
-    border-color: var(--forest-green);
-}
-
-/* =========================================
-   12. FOOTER
-   ========================================= */
-footer {
-    background-color: var(--forest-green);
-    color: var(--bg-pearl);
-    text-align: center;
-    padding: 60px 20px;
+/* --- DARK FOOTER --- */
+.footer-dark {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
     font-size: 0.9rem;
 }
-
-footer p {
-    margin: 5px 0;
-    color: rgba(253, 253, 253, 0.7);
+.footer-grid {
+    max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px;
 }
+.footer-col h4 { color: #fff; margin-bottom: 15px; font-size: 1rem; }
+.footer-col p, .footer-col a { color: #a0a0a0; margin: 5px 0; text-decoration: none; display: block; }
+.footer-bottom { border-top: 1px solid #222; padding-top: 20px; text-align: center; color: #666; font-size: 0.8rem; }
+.footer-bottom a { color: #a0a0a0; text-decoration: none; }
 
-footer a {
-    color: var(--bg-pearl);
-    text-decoration: none;
-    font-weight: 600;
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .welcome-section { flex-direction: column; text-align: center; }
+    .footer-grid { flex-direction: column; text-align: center; }
 }
-
-/* =========================================
-   13. FLOATING WHATSAPP BUTTON
-   ========================================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-.whatsapp-float svg {
-    width: 35px;
-    height: 35px;
-    fill: white;
-}
-
