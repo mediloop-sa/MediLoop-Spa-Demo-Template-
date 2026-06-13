@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediLoop Wellness Template</title>
-   <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="globals.css">
 </head>
 <body>
 
@@ -16,10 +16,12 @@
         <a href="#reviews">In The Press</a>
     </nav>
 
-    <header id="home" class="hero-plain">
-        <h1>MEDILOOP WELLNESS TEMPLATE</h1>
-        <p class="hero-quote">"A sanctuary for your mind, body, and soul."</p>
-        <a href="#book" class="btn">Book Now</a>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>MEDILOOP WELLNESS TEMPLATE</h1>
+            <p class="hero-quote">"A sanctuary for your mind, body, and soul."</p>
+            <a href="#book" class="btn">Book Now</a>
+        </div>
     </header>
 
     <section id="welcome" class="welcome-section">
@@ -32,33 +34,23 @@
     </section>
 
     <section id="metrics" class="metrics-section">
-        <div class="metrics-glass-box">
-            <h2 class="shimmer-text">MEASURABLE SANCTUARY IMPACT</h2>
-            <p style="margin-bottom: 40px; color: #3A5642;">Real-world data driving growth, retention, and seamless clinical flow.</p>
-            
-            <div class="cards-grid">
-                <div class="metric-card">
-                    <div>
-                        <h3 class="metric-number" data-target="85" data-suffix="%">0</h3>
-                        <h4 class="metric-label">Client Retention</h4>
-                        <p class="metric-desc">Automated check-ins and hyper-personalized ritual sequencing.</p>
-                    </div>
+        <div class="container">
+            <h2 class="section-title text-center">Sanctuary Impact</h2>
+            <div class="grid-3">
+                <div class="metric-box">
+                    <h3 class="metric-number" data-target="85" data-suffix="%">0</h3>
+                    <h4>Client Retention</h4>
+                    <p>Automated check-ins and hyper-personalized ritual sequencing.</p>
                 </div>
-
-                <div class="metric-card">
-                    <div>
-                        <h3 class="metric-number" data-target="40" data-prefix="+" data-suffix="%">0</h3>
-                        <h4 class="metric-label">Revenue Growth</h4>
-                        <p class="metric-desc">Smart optimization dynamically fills off-peak treatment rooms.</p>
-                    </div>
+                <div class="metric-box">
+                    <h3 class="metric-number" data-target="40" data-prefix="+" data-suffix="%">0</h3>
+                    <h4>Revenue Growth</h4>
+                    <p>Smart optimization dynamically fills off-peak treatment rooms.</p>
                 </div>
-
-                <div class="metric-card">
-                    <div>
-                        <h3 class="metric-number" data-target="100" data-suffix="%">0</h3>
-                        <h4 class="metric-label">Compliant Flow</h4>
-                        <p class="metric-desc">Encryption meets absolute serenity. Patient data synced flawlessly.</p>
-                    </div>
+                <div class="metric-box">
+                    <h3 class="metric-number" data-target="100" data-suffix="%">0</h3>
+                    <h4>Compliant Flow</h4>
+                    <p>Encryption meets absolute serenity. Patient data synced flawlessly.</p>
                 </div>
             </div>
         </div>
@@ -152,54 +144,56 @@
     </footer>
 
     <script>
-        // 1. Metric Counters Animation
-        const counters = document.querySelectorAll('.metric-number');
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const suffix = counter.getAttribute('data-suffix') || '';
-                const prefix = counter.getAttribute('data-prefix') || '';
-                
-                const updateCount = () => {
-                    const textContent = counter.innerText.replace(/[^0-9]/g, '');
-                    const count = +textContent;
-                    const increment = target / 40;
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Metric Counters Animation
+            const counters = document.querySelectorAll('.metric-number');
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const prefix = counter.getAttribute('data-prefix') || '';
 
-                    if (count < target) {
-                        counter.innerText = prefix + Math.ceil(count + increment) + suffix;
-                        setTimeout(updateCount, 30);
-                    } else {
-                        counter.innerText = prefix + target + suffix;
+                    const updateCount = () => {
+                        const textContent = counter.innerText.replace(/[^0-9]/g, '');
+                        const count = +textContent;
+                        const increment = target / 40;
+
+                        if (count < target) {
+                            counter.innerText = prefix + Math.ceil(count + increment) + suffix;
+                            setTimeout(updateCount, 40);
+                        } else {
+                            counter.innerText = prefix + target + suffix;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            // 2. Slide-In Reviews Animation
+            const slideElements = document.querySelectorAll('.slide-in');
+
+            // Main Observer for both sections
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Handle Metrics
+                    if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
+                        animateCounters();
+                        observer.unobserve(entry.target); 
                     }
-                };
-                updateCount();
-            });
-        };
+                    // Handle Slide-ins
+                    if(entry.isIntersecting && entry.target.classList.contains('slide-in')) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 }); 
 
-        // 2. Slide-In Reviews Animation
-        const slideElements = document.querySelectorAll('.slide-in');
+            // Attach observer to targets
+            const metricsSection = document.querySelector('.metrics-section');
+            if(metricsSection) observer.observe(metricsSection);
 
-        // Main Observer for both sections
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Handle Metrics
-                if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
-                    animateCounters();
-                    observer.unobserve(entry.target); 
-                }
-                // Handle Slide-ins
-                if(entry.isIntersecting && entry.target.classList.contains('slide-in')) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 }); 
-
-        // Attach observer to targets
-        const metricsSection = document.querySelector('.metrics-section');
-        if(metricsSection) observer.observe(metricsSection);
-        
-        slideElements.forEach(el => observer.observe(el));
+            slideElements.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
