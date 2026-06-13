@@ -136,46 +136,76 @@ nav a:hover {
 .welcome-text { flex: 1; }
 .welcome-text h2 { font-weight: 400; font-size: 2.2rem; margin-bottom: 20px; }
 
-/* --- WARM HOSPITALITY METRICS SECTION --- */
+/* --- GLASSMORPHIC METRICS SECTION --- */
 .metrics-section {
-    background-color: #F9F6F0; 
-    padding: 100px 0;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 120px 20px;
+    position: relative;
+    background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Onboarding.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.section-title {
-    font-size: 2.2rem;
-    font-weight: 400;
-    margin-bottom: 50px;
-}
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-}
-.metric-box {
-    padding: 40px 20px;
+
+.metrics-glass-box {
+    background: rgba(255, 255, 255, 0.65);
+    max-width: 1100px;
+    width: 100%;
+    padding: 80px 40px;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     text-align: center;
 }
-.metric-number {
-    font-size: 3.5rem;
+
+.metrics-glass-box .section-title {
     color: var(--forest-green);
-    margin-bottom: 10px;
-    font-weight: 300;
+    margin-bottom: 60px;
 }
-.metric-box h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+
+.cards-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 40px; 
+    justify-content: center;
+}
+
+.metric-circle {
+    width: 260px; 
+    height: 260px; 
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(26, 54, 34, 0.1);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    padding: 30px; 
+    box-sizing: border-box;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.metric-circle:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(26, 54, 34, 0.15); 
+}
+
+.metric-number { 
+    font-size: 3rem; 
+    font-weight: 200; 
+    margin: 0 0 10px 0; 
+    color: var(--forest-green); 
+}
+
+.metric-circle h4 { 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    margin: 0; 
+    color: var(--text-muted); 
     letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #4A7055;
 }
-.metric-box p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-}
+
 
 /* --- SIGNATURE RITUALS (SCROLLABLE) --- */
 .rituals-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
