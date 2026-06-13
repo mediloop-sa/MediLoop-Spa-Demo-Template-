@@ -50,8 +50,6 @@ nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     padding: 20px 0;
     z-index: 1000;
-    
-    /* Flexbox keeps everything in a perfect row */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +62,7 @@ nav a {
     font-weight: 600; 
     text-transform: uppercase; 
     transition: color 0.3s ease;
-    white-space: nowrap; /* CRITICAL: Prevents text from breaking onto a second line */
+    white-space: nowrap; 
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
 }
@@ -221,37 +219,64 @@ nav a:hover {
     font-weight: 400;
 }
 
-/* --- EDITORIAL RITUALS SECTION (DARK THEME) --- */
+/* --- EDITORIAL RITUALS SECTION (DARK THEME, HORIZONTAL SCROLL) --- */
 .editorial-rituals {
-    background-color: var(--forest-green); /* Dark forest green background */
-    padding: 120px 0;
+    background-color: var(--forest-green); 
+    padding: 120px 0 80px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative; /* Allows absolute positioning for the scroll text */
 }
-.editorial-rituals .section-title {
-    color: #FFFFFF; /* Pops against the dark background */
+
+/* Ultra-thin Montserrat Heading */
+.editorial-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #FFFFFF;
+    margin-bottom: 60px;
 }
-.editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+/* Forces everything onto one strict horizontal line */
+.editorial-scroll-container {
+    display: flex;
     gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
+.editorial-scroll-container::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
+}
+
+/* Fixed width ensures they NEVER stack */
 .editorial-card {
+    min-width: 320px; /* Adjust this to make the cards wider or thinner */
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
 }
+
 .editorial-img {
     width: 100%;
     height: 260px;
     object-fit: cover;
     display: block;
 }
+
 .editorial-info {
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Thin white border */
+    border: 1px solid rgba(255, 255, 255, 0.3); 
     border-top: none; 
     padding: 25px 20px;
     text-align: left; 
     background-color: transparent;
+    flex-grow: 1; /* Makes sure the boxes stretch evenly */
 }
+
 .editorial-meta {
     font-size: 0.65rem;
     text-transform: uppercase;
@@ -259,6 +284,7 @@ nav a:hover {
     color: rgba(255, 255, 255, 0.7); 
     margin: 0 0 15px 0;
 }
+
 .editorial-info h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -267,10 +293,23 @@ nav a:hover {
     color: #FFFFFF; 
     text-transform: none; 
 }
+
 .editorial-price {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.7); 
     margin: 0;
+}
+
+/* Small, delicate scroll indicator */
+.scroll-indicator {
+    text-align: right;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    padding-right: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* --- REVIEWS / IN THE PRESS --- */
@@ -345,4 +384,5 @@ nav a:hover {
     .metric-circle { width: 280px; height: 280px; }
     .social-buttons { flex-direction: column; align-items: center; }
     .social-btn { width: 200px; }
+    .editorial-heading { font-size: 1.8rem; }
 }
