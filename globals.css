@@ -15,7 +15,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Fixes the white line issue */
+    overflow-x: hidden; 
     scroll-behavior: smooth;
 }
 
@@ -45,9 +45,9 @@ h1, h2, h3, h4, nav a, .btn, .metric-number {
 nav {
     position: fixed;
     top: 0; left: 0; width: 100%;
-    background-color: rgba(253, 253, 253, 0.95);
+    background-color: rgba(0, 0, 0, 0.98); /* Changed to pure black */
     backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(26, 54, 34, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
     padding: 20px 0;
     text-align: center;
     z-index: 1000;
@@ -55,10 +55,14 @@ nav {
 nav a { 
     margin: 0 15px; 
     text-decoration: none; 
-    color: var(--forest-green); 
+    color: #FFFFFF; /* Changed to white writing */
     font-size: 0.85rem; 
     font-weight: 600; 
     text-transform: uppercase; 
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: var(--forest-green);
 }
 
 /* --- UPDATED FULL-SCREEN HERO SECTION --- */
@@ -71,13 +75,13 @@ nav a {
     justify-content: center;
     text-align: center;
     position: relative;
-    margin-top: -60px; /* Pulls the image up to be perfectly behind the navbar */
+    margin-top: -60px; 
 }
 .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.25); /* Soft dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.25); 
 }
 .hero-content {
     position: relative;
@@ -98,7 +102,7 @@ nav a {
 }
 .btn {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 15px 70px; /* Increased from 40px to 70px for a longer button */
     background-color: var(--forest-green);
     color: var(--bg-pearl);
     text-decoration: none;
@@ -134,7 +138,7 @@ nav a {
 
 /* --- WARM HOSPITALITY METRICS SECTION --- */
 .metrics-section {
-    background-color: #F9F6F0; /* Soft warm luxury beige */
+    background-color: #F9F6F0; 
     padding: 100px 0;
     border-top: 1px solid rgba(0,0,0,0.05);
     border-bottom: 1px solid rgba(0,0,0,0.05);
