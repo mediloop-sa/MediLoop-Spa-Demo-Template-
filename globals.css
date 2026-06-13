@@ -281,6 +281,16 @@ nav a:hover {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    /* --- NEW SLIM MOBILE NAV --- */
+    nav {
+        padding: 12px 0; /* Cuts the thick padding down drastically */
+    }
+    nav a {
+        margin: 0 8px; /* Brings links closer together so they don't wrap and stack */
+        font-size: 0.7rem; /* Shrinks the font slightly to fit perfectly on one line */
+    }
+
+    /* --- Existing Mobile Fixes --- */
     .welcome-section { flex-direction: column; text-align: center; }
     .footer-grid { flex-direction: column; text-align: center; }
     .hero h1 { font-size: 2.2rem; }
