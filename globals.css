@@ -10,20 +10,35 @@
     --text-muted: #3A5642;
 }
 
-body {
+/* --- GLOBAL LAYOUT FIXES --- */
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Fixes the white line issue */
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-pearl);
     color: var(--forest-green);
     padding-top: 60px; 
     line-height: 1.8;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, nav a, .btn, .metric-number {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.text-center {
+    text-align: center;
 }
 
 /* --- NAVIGATION --- */
@@ -37,30 +52,49 @@ nav {
     text-align: center;
     z-index: 1000;
 }
-nav a { margin: 0 15px; text-decoration: none; color: var(--forest-green); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+nav a { 
+    margin: 0 15px; 
+    text-decoration: none; 
+    color: var(--forest-green); 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+}
 
-/* --- HERO SECTION --- */
-.hero-plain {
-    min-height: 80vh;
+/* --- UPDATED FULL-SCREEN HERO SECTION --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/MediLoop%20Websites.png') center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(253, 253, 253, 0.5), rgba(253, 253, 253, 0.5)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-    padding: 20px;
+    position: relative;
+    margin-top: -60px; /* Pulls the image up to be perfectly behind the navbar */
 }
-.hero-plain h1 {
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.25); /* Soft dark overlay for text readability */
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
     font-size: 3rem;
     font-weight: 200; 
     margin-bottom: 10px;
     letter-spacing: 4px;
+    color: #FFFFFF;
 }
 .hero-quote {
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 40px;
-    color: var(--forest-green);
+    color: #FFFFFF;
 }
 .btn {
     display: inline-block;
@@ -98,56 +132,46 @@ nav a { margin: 0 15px; text-decoration: none; color: var(--forest-green); font-
 .welcome-text { flex: 1; }
 .welcome-text h2 { font-weight: 400; font-size: 2.2rem; margin-bottom: 20px; }
 
-/* --- METRICS SECTION (GLASSMORPHIC) --- */
+/* --- WARM HOSPITALITY METRICS SECTION --- */
 .metrics-section {
-    padding: 120px 20px;
-    position: relative;
-    background: linear-gradient(rgba(253, 253, 253, 0.4), rgba(253, 253, 253, 0.4)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Onboarding.jpg') center/cover;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
+    background-color: #F9F6F0; /* Soft warm luxury beige */
+    padding: 100px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-.metrics-glass-box {
-    background: rgba(255, 255, 255, 0.55);
-    max-width: 1100px;
-    width: 100%;
-    padding: 60px 40px;
-    border-radius: 32px;
-    box-shadow: 0 20px 40px rgba(26, 54, 34, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(26, 54, 34, 0.15);
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+.metric-box {
+    padding: 40px 20px;
     text-align: center;
 }
-.shimmer-text {
-    font-size: 2rem;
+.metric-number {
+    font-size: 3.5rem;
+    color: var(--forest-green);
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+.metric-box h4 {
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 15px;
-    background: linear-gradient(90deg, #1A3622, #5C8065, #1A3622);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fluidGradient 4s ease infinite;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4A7055;
 }
-@keyframes fluidGradient { 
-    0% { background-position: 0% 50%; } 
-    50% { background-position: 100% 50%; } 
-    100% { background-position: 0% 50%; } 
+.metric-box p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
-.cards-grid {
-    display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 40px;
-}
-.metric-card {
-    width: 280px; height: 280px; border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(26, 54, 34, 0.1);
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 30px; box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-.metric-card:hover { transform: translateY(-8px); border-color: rgba(26, 54, 34, 0.4); box-shadow: 0 10px 25px rgba(26, 54, 34, 0.1); }
-.metric-number { font-size: 3rem; font-weight: 300; margin: 0 0 5px 0; color: var(--forest-green); }
-.metric-label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0; color: #4A7055; }
-.metric-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
 
 /* --- SIGNATURE RITUALS (SCROLLABLE) --- */
 .rituals-section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
@@ -159,7 +183,6 @@ nav a { margin: 0 15px; text-decoration: none; color: var(--forest-green); font-
     padding-bottom: 30px;
     scroll-snap-type: x mandatory; 
 }
-/* Hides scrollbar for cleaner look */
 .rituals-container::-webkit-scrollbar { height: 8px; }
 .rituals-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
 .rituals-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
@@ -226,10 +249,8 @@ nav a { margin: 0 15px; text-decoration: none; color: var(--forest-green); font-
 @media (max-width: 768px) {
     .welcome-section { flex-direction: column; text-align: center; }
     .footer-grid { flex-direction: column; text-align: center; }
-    .hero-plain h1 { font-size: 2.2rem; }
-    .metrics-glass-box { padding: 40px 20px; }
-    .cards-grid { gap: 20px; }
-    .metric-card { width: 240px; height: 240px; padding: 20px;}
+    .hero h1 { font-size: 2.2rem; }
+    .metric-box { padding: 20px; }
     .social-buttons { flex-direction: column; align-items: center; }
     .social-btn { width: 200px; }
 }
