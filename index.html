@@ -150,26 +150,35 @@
         </div>
     </footer>
 
-    <script>
+       <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Metric Counters Animation
+            // 1. Upgraded Metric Counters Animation (Handles Decimals)
             const counters = document.querySelectorAll('.metric-number');
             const animateCounters = () => {
                 counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
+                    const target = parseFloat(counter.getAttribute('data-target'));
                     const suffix = counter.getAttribute('data-suffix') || '';
                     const prefix = counter.getAttribute('data-prefix') || '';
+                    const isDecimal = target % 1 !== 0; // Detects if the target is a decimal like 4.5
 
                     const updateCount = () => {
-                        const textContent = counter.innerText.replace(/[^0-9]/g, '');
-                        const count = +textContent;
-                        const increment = target / 40;
+                        // Extract current number, allowing for decimals
+                        const currentText = counter.innerText.replace(/[^\d.]/g, '');
+                        const count = parseFloat(currentText) || 0;
+                        const increment = target / 40; 
 
                         if (count < target) {
-                            counter.innerText = prefix + Math.ceil(count + increment) + suffix;
-                            setTimeout(updateCount, 40);
+                            let nextCount = count + increment;
+                            
+                            // Prevent overshooting the target
+                            if (nextCount >= target) {
+                                counter.innerText = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
+                            } else {
+                                counter.innerText = prefix + (isDecimal ? nextCount.toFixed(1) : Math.ceil(nextCount)) + suffix;
+                                setTimeout(updateCount, 40);
+                            }
                         } else {
-                            counter.innerText = prefix + target + suffix;
+                            counter.innerText = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
                         }
                     };
                     updateCount();
@@ -179,15 +188,12 @@
             // 2. Slide-In Reviews Animation
             const slideElements = document.querySelectorAll('.slide-in');
 
-            // Main Observer for both sections
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // Handle Metrics
                     if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
                         animateCounters();
                         observer.unobserve(entry.target); 
                     }
-                    // Handle Slide-ins
                     if(entry.isIntersecting && entry.target.classList.contains('slide-in')) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
@@ -195,7 +201,6 @@
                 });
             }, { threshold: 0.2 }); 
 
-            // Attach observer to targets
             const metricsSection = document.querySelector('.metrics-section');
             if(metricsSection) observer.observe(metricsSection);
 
