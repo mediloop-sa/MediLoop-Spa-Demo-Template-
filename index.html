@@ -8,25 +8,14 @@
 </head>
 <body>
 
-       <nav>
+    <!-- UPDATED: Simple, clean navigation with shortened names -->
+    <nav>
         <a href="#home">Home</a>
-        <a href="#welcome">About Us</a>
+        <a href="#welcome">About</a>
         <a href="#rituals">Rituals</a>
-        
-        <!-- These links hide on small screens -->
-        <a href="#metrics" class="desktop-only">Impact</a>
-        <a href="#reviews" class="desktop-only">Press</a>
-
-        <!-- This 'More' dropdown only shows on small screens -->
-        <div class="dropdown mobile-only">
-            <button class="dropbtn" onclick="toggleMenu()">More ▾</button>
-            <div class="dropdown-content" id="moreMenu">
-                <a href="#metrics" onclick="toggleMenu()">Impact</a>
-                <a href="#reviews" onclick="toggleMenu()">Press</a>
-            </div>
-        </div>
+        <a href="#metrics">Impact</a>
+        <a href="#reviews">Press</a>
     </nav>
-
 
     <header id="home" class="hero">
         <div class="hero-content">
@@ -36,7 +25,6 @@
         </div>
     </header>
 
-        <!-- WELCOME SECTION -->
     <section id="welcome" class="welcome-section">
         <div class="welcome-text">
             <h2>WELCOME TO MEDILOOP WELLNESS TEMPLATE</h2>
@@ -45,30 +33,27 @@
         </div>
     </section>
 
-       <!-- GLASSMORPHIC METRICS SECTION -->
+    <!-- GLASSMORPHIC METRICS SECTION -->
     <section id="metrics" class="metrics-section">
         <div class="metrics-glass-box">
             <h2 class="section-title text-center">Sanctuary Impact</h2>
             <div class="cards-grid">
-                <!-- Circle 1: Review Rate -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="4.5" data-suffix="/5">0</h3>
-                        <h4>Why Our Community Trusts Us</h4>
+                        <h4>Review Rate</h4>
                     </div>
                 </div>
-                <!-- Circle 2: Treatments -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="15000" data-suffix="+">0</h3>
-                        <h4>Thousands of Moments of Pure Relaxation</h4>
+                        <h4>Treatments</h4>
                     </div>
                 </div>
-                <!-- Circle 3: Experience -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="5" data-suffix=" Years">0</h3>
-                        Hands Guided by Years of Experience
+                        <h4>Experience</h4>
                     </div>
                 </div>
             </div>
@@ -162,27 +147,24 @@
         </div>
     </footer>
 
-       <script>
+    <!-- DROPDOWN SCRIPT COMPLETELY REMOVED -->
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Upgraded Metric Counters Animation (Handles Decimals)
             const counters = document.querySelectorAll('.metric-number');
             const animateCounters = () => {
                 counters.forEach(counter => {
                     const target = parseFloat(counter.getAttribute('data-target'));
                     const suffix = counter.getAttribute('data-suffix') || '';
                     const prefix = counter.getAttribute('data-prefix') || '';
-                    const isDecimal = target % 1 !== 0; // Detects if the target is a decimal like 4.5
+                    const isDecimal = target % 1 !== 0; 
 
                     const updateCount = () => {
-                        // Extract current number, allowing for decimals
                         const currentText = counter.innerText.replace(/[^\d.]/g, '');
                         const count = parseFloat(currentText) || 0;
                         const increment = target / 40; 
 
                         if (count < target) {
                             let nextCount = count + increment;
-                            
-                            // Prevent overshooting the target
                             if (nextCount >= target) {
                                 counter.innerText = prefix + (isDecimal ? target.toFixed(1) : target) + suffix;
                             } else {
@@ -197,7 +179,6 @@
                 });
             };
 
-            // 2. Slide-In Reviews Animation
             const slideElements = document.querySelectorAll('.slide-in');
 
             const observer = new IntersectionObserver((entries) => {
@@ -218,24 +199,6 @@
 
             slideElements.forEach(el => observer.observe(el));
         });
-
-            // 3. Mobile Navigation Dropdown Logic
-            window.toggleMenu = function() {
-                document.getElementById("moreMenu").classList.toggle("show");
-            };
-
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
-                if (!event.target.matches('.dropbtn')) {
-                    const dropdowns = document.getElementsByClassName("dropdown-content");
-                    for (let i = 0; i < dropdowns.length; i++) {
-                        let openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
-                        }
-                    }
-                }
-            };
     </script>
 </body>
 </html>
