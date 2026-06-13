@@ -8,13 +8,25 @@
 </head>
 <body>
 
-    <nav>
+       <nav>
         <a href="#home">Home</a>
         <a href="#welcome">About Us</a>
         <a href="#rituals">Rituals</a>
-        <a href="#metrics">Impact</a>
-        <a href="#reviews">In The Press</a>
+        
+        <!-- These links hide on small screens -->
+        <a href="#metrics" class="desktop-only">Impact</a>
+        <a href="#reviews" class="desktop-only">Press</a>
+
+        <!-- This 'More' dropdown only shows on small screens -->
+        <div class="dropdown mobile-only">
+            <button class="dropbtn" onclick="toggleMenu()">More ▾</button>
+            <div class="dropdown-content" id="moreMenu">
+                <a href="#metrics" onclick="toggleMenu()">Impact</a>
+                <a href="#reviews" onclick="toggleMenu()">Press</a>
+            </div>
+        </div>
     </nav>
+
 
     <header id="home" class="hero">
         <div class="hero-content">
