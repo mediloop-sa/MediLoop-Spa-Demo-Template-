@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- UPDATED: Simple, clean navigation with shortened names -->
+    <!-- Simple, clean navigation with shortened names -->
     <nav>
         <a href="#home">Home</a>
         <a href="#welcome">About</a>
@@ -33,7 +33,7 @@
         </div>
     </section>
 
-       <!-- GLASSMORPHIC METRICS SECTION -->
+    <!-- GLASSMORPHIC METRICS SECTION -->
     <section id="metrics" class="metrics-section">
         <div class="metrics-glass-box">
             <h2 class="section-title text-center">Sanctuary Impact</h2>
@@ -66,14 +66,15 @@
         </div>
     </section>
 
-        <!-- EDITORIAL RITUALS SECTION -->
+    <!-- EDITORIAL RITUALS SECTION -->
     <section id="rituals" class="editorial-rituals">
         <div class="container">
             <h2 class="section-title text-center">Signature Rituals</h2>
             <div class="editorial-grid">
                 <!-- Card 1 -->
                 <div class="editorial-card">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png">
+                    <!-- Added class="editorial-img" to ensure sizing works -->
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Deep Tissue Massage" class="editorial-img">
                     <div class="editorial-info">
                         <p class="editorial-meta">90 Min | Deep Tissue</p>
                         <h3>Deep Tissue Harmony</h3>
@@ -82,7 +83,8 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="editorial-card">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png">
+                    <!-- Added class="editorial-img" to ensure sizing works -->
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Facial" class="editorial-img">
                     <div class="editorial-info">
                         <p class="editorial-meta">60 Min | Hydration</p>
                         <h3>Luminous Glow Facial</h3>
@@ -91,7 +93,8 @@
                 </div>
                 <!-- Card 3 -->
                 <div class="editorial-card">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png">
+                    <!-- Added class="editorial-img" to ensure sizing works -->
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png" alt="Detox Soak" class="editorial-img">
                     <div class="editorial-info">
                         <p class="editorial-meta">45 Min | Hydrotherapy</p>
                         <h3>Mineral Detox Soak</h3>
@@ -150,7 +153,7 @@
         </div>
     </footer>
 
-    <!-- DROPDOWN SCRIPT COMPLETELY REMOVED -->
+    <!-- DECIMAL COUNTER & ANIMATION SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll('.metric-number');
