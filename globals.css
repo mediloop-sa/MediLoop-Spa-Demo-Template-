@@ -1100,6 +1100,122 @@ nav a:hover {
 }
 
 /* =========================================
+   JOURNAL & PRESS PAGE STYLES
+   ========================================= */
+
+/* Parallax Background for the Feed */
+.journal-feed-section {
+    padding: 120px 20px;
+    background: linear-gradient(rgba(15, 30, 20, 0.9), rgba(15, 30, 20, 0.9)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png') center/cover no-repeat;
+    background-attachment: fixed; /* Creates the parallax scrolling effect */
+    position: relative;
+}
+
+/* Glassmorphic Article Boxes */
+.glass-article {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    background: rgba(255, 255, 255, 0.08); /* Extremely subtle white tint */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden; /* Forces the image to clip to the soft corners */
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.glass-article.reverse {
+    flex-direction: row-reverse;
+}
+.glass-article:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Setup */
+.article-image-box {
+    width: 45%;
+    position: relative;
+    overflow: hidden;
+}
+.article-image-box img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+.glass-article:hover .article-image-box img {
+    transform: scale(1.05); /* Gentle zoom on hover */
+}
+
+/* Text Content Setup */
+.article-content {
+    width: 55%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.article-category {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+.article-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+.article-snippet {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+.read-more {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.arrow {
+    transition: transform 0.3s ease;
+}
+.glass-article:hover .arrow {
+    transform: translateX(10px); /* Arrow slides right on hover */
+}
+
+/* The Final Quote Break */
+.final-quote-section {
+    background-color: #050505; /* Seamless transition to the black footer */
+    padding: 100px 20px 40px 20px;
+}
+.final-quote-text {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* =========================================
    MOBILE RESPONSIVE ADJUSTMENTS
    ========================================= */
 @media (max-width: 768px) {
@@ -1162,8 +1278,18 @@ nav a:hover {
     .curation-card { width: 90%; margin-left: 0; margin-top: -50px; padding: 30px; text-align: center; }
     .curation-block.reverse .curation-card { margin-right: 0; }
     
-    .passport-timeline::after { left: 20px; } /* Moves thread to the left */
+    .passport-timeline::after { left: 20px; } 
+
+/* Moves thread to the left */
     .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; margin-bottom: 40px; }
     .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
     .timeline-item::after, .timeline-item.right::after { left: 12px; }
+
+    /* Press Page Mobile Fixes */
+    .glass-article, .glass-article.reverse { flex-direction: column; margin-bottom: 40px; }
+    .article-image-box { width: 100%; height: 250px; }
+    .article-image-box img { min-height: 250px; }
+    .article-content { width: 100%; padding: 30px 20px; text-align: center; }
+    .read-more { justify-content: center; }
+    .final-quote-text { font-size: 1.6rem; }
 }
