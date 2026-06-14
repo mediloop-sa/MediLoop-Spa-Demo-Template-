@@ -1166,7 +1166,8 @@ nav a:hover {
     font-size: 0.7rem;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: #FFFFFF; /* Pure bright white */
+    font-weight: 600;
     margin-bottom: 15px;
 }
 .article-title {
@@ -1177,11 +1178,12 @@ nav a:hover {
     line-height: 1.3;
 }
 .article-snippet {
-    color: rgba(255, 255, 255, 0.8);
+    color: #FFFFFF; /* Pure bright white */
     font-size: 0.95rem;
     line-height: 1.8;
     margin-bottom: 30px;
     font-weight: 300;
+    opacity: 0.95;
 }
 .read-more {
     font-family: 'Montserrat', sans-serif;
