@@ -305,12 +305,12 @@ nav a:hover {
     padding: 150px 20px;
     background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Payment%20background.jpg') center/cover no-repeat;
 }
-/* Dark warm overlay matching the reference image */
+/* Dark warm overlay */
 .press-section::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(80, 60, 40, 0.75); /* Deep olive/bronze tint */
+    background: rgba(80, 60, 40, 0.75); 
     z-index: 1;
 }
 .press-content {
@@ -321,24 +321,24 @@ nav a:hover {
 }
 .press-heading {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
+    font-weight: 200; /* Ultra-thin */
     font-size: 2.5rem;
     color: #FFFFFF;
     margin-bottom: 70px;
-    letter-spacing: 4px;
-    text-transform: none; /* Matching "In the Press" formatting */
+    letter-spacing: 8px; /* Elegant, wide spacing */
+    text-transform: uppercase; /* Forced capitals */
 }
 .press-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* STRICTLY forces 1 row of 3 columns */
     gap: 50px;
 }
 .press-card {
-    text-align: left; /* Aligns quote strictly to the left */
+    text-align: left; 
 }
 .quote-mark {
     font-size: 4rem;
-    font-family: Georgia, serif; /* Classic serif font for quotes */
+    font-family: Georgia, serif; 
     color: #FFFFFF;
     line-height: 0.5;
     margin-bottom: 20px;
@@ -359,6 +359,21 @@ nav a:hover {
     color: #FFFFFF;
     margin: 0;
 }
+
+/* --- STAGGERED SLIDE-IN ANIMATION --- */
+.press-card.slide-in {
+    opacity: 0;
+    transform: translateX(40px); /* Sets them up to slide in from the right */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.press-card.slide-in.show {
+    opacity: 1;
+    transform: translateX(0); /* Snaps them into their final position */
+}
+/* The magic that makes them enter one by one */
+.press-card.slide-in:nth-child(1) { transition-delay: 0s; }
+.press-card.slide-in:nth-child(2) { transition-delay: 0.2s; }
+.press-card.slide-in:nth-child(3) { transition-delay: 0.4s; }
 
 /* --- SOCIALS SECTION --- */
 .socials-section { padding: 80px 20px; text-align: center; }
