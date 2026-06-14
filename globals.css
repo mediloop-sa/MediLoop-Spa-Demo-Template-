@@ -876,6 +876,33 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+/* --- The Etiquette Section (White Space Break) --- */
+.etiquette-section {
+    background-color: var(--bg-pearl);
+    padding: 120px 20px;
+}
+.etiquette-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.etiquette-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--forest-green);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.etiquette-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
 /* 4. The Gift Card Bookend Section */
 .gift-card-section {
     background-color: rgba(20, 40, 25, 1); /* Very dark olive/forest green */
@@ -974,4 +1001,5 @@ nav a:hover {
     .treatment-price { font-size: 1rem; }
     .gift-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .gift-image img { height: 300px; }
+    .etiquette-grid { grid-template-columns: 1fr; gap: 40px; }
 }
