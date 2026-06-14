@@ -549,6 +549,227 @@ nav a:hover {
 }
 
 /* =========================================
+   ABOUT PAGE: LUXURY EDITORIAL STYLES
+   ========================================= */
+
+/* 1. Focus Reveal Hero (The "Ripple" Alternative) */
+.subpage-hero {
+    height: 70vh;
+    background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Payment%20background.jpg') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+.subpage-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: inherit;
+    filter: blur(20px);
+    transform: scale(1.2);
+    animation: clearFocus 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.subpage-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26, 54, 34, 0.4); /* Dark green tint */
+}
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpText 1.5s ease 0.5s forwards;
+}
+@keyframes clearFocus {
+    to { filter: blur(0px); transform: scale(1); }
+}
+@keyframes fadeUpText {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Philosophy Sticky Scroll */
+.philosophy-sticky-section {
+    padding: 120px 20px;
+    background-color: var(--bg-pearl);
+}
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start; /* Crucial for sticky to work */
+}
+.philosophy-text-sticky {
+    position: sticky;
+    top: 150px; /* Pins it 150px from the top of the screen */
+}
+.philosophy-text-sticky p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 2;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+.philosophy-images {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.scroll-img {
+    width: 90%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.offset-right {
+    align-self: flex-end; /* Pushes the middle image to the right for an editorial stagger */
+}
+
+/* 3. The Quote Break (Your Idea!) */
+.quote-break-section {
+    padding: 80px 20px;
+    background-color: #F5F2EB; /* Soft editorial beige */
+}
+.elegant-line {
+    border: 0;
+    height: 1px;
+    background: rgba(26, 54, 34, 0.15);
+    width: 60px;
+    margin: 0 auto;
+}
+.quote-break-text {
+    font-family: Georgia, serif; /* Classic editorial font */
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--forest-green);
+    margin: 40px 0 20px 0;
+    line-height: 1.6;
+}
+.quote-break-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* 4. Expanding Image Accordion */
+.accordion-section {
+    padding: 120px 20px;
+    background-color: var(--bg-pearl);
+}
+.accordion-container {
+    display: flex;
+    gap: 15px;
+    height: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.accordion-item {
+    position: relative;
+    flex: 1; /* Starts small */
+    border-radius: 20px; /* Soft cool corners */
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Buttery smooth expansion */
+}
+.accordion-item img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.accordion-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26, 54, 34, 0.6); /* Dark green tint */
+    transition: background 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vertical-title {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 6px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    transition: opacity 0.4s ease;
+}
+.accordion-content {
+    position: absolute;
+    bottom: 40px; left: 40px; right: 40px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    text-align: left;
+}
+.accordion-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+/* The Hover Magic */
+.accordion-item:hover {
+    flex: 4; /* Expands to take up the space */
+}
+.accordion-item:hover .accordion-overlay {
+    background: rgba(0, 0, 0, 0.2); /* Clears the tint */
+}
+.accordion-item:hover .vertical-title {
+    opacity: 0; /* Hides vertical text */
+}
+.accordion-item:hover .accordion-content {
+    opacity: 1; /* Shows the paragraph */
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+/* 5. Manifesto Marquee */
+.manifesto-marquee {
+    position: relative;
+    height: 400px;
+    background-color: var(--forest-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.marquee-bg {
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0.05; /* Extremely subtle */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8rem;
+    font-weight: 600;
+    color: white;
+    animation: scrollMarquee 40s linear infinite;
+}
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.manifesto-glass-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+.manifesto-glass-box h3 {
+    color: white;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* =========================================
    MOBILE RESPONSIVE ADJUSTMENTS
    ========================================= */
 @media (max-width: 768px) {
@@ -590,4 +811,15 @@ nav a:hover {
     .subpage-hero { height: 40vh; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-image img { min-height: 300px; }
+
+    /* About Page Mobile Fixes */
+    .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .philosophy-text-sticky { position: static; } /* Disables sticky on mobile */
+    .scroll-img { width: 100%; height: 350px; }
+    .offset-right { align-self: center; }
+    .quote-break-text { font-size: 1.4rem; }
+    .accordion-container { flex-direction: column; height: 800px; } /* Stacks the accordion vertically */
+    .vertical-title { writing-mode: horizontal-tb; transform: none; }
+    .manifesto-glass-box { margin: 0 20px; padding: 30px 20px; text-align: center; }
+    .manifesto-glass-box h3 { font-size: 1.5rem; }
 }
