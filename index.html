@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#welcome">About</a>
@@ -33,12 +32,10 @@
         </div>
     </section>
 
-    <!-- GLASSMORPHIC METRICS SECTION -->
     <section id="metrics" class="metrics-section">
         <div class="metrics-glass-box">
             <h2 class="section-title text-center">Sanctuary Impact</h2>
             <div class="cards-grid">
-                <!-- Circle 1 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="15000" data-suffix="+">0</h3>
@@ -46,7 +43,6 @@
                         <p>Curating thousands of personalized journeys to pure, profound relaxation.</p>
                     </div>
                 </div>
-                <!-- Circle 2 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="4.5" data-suffix="/5">0</h3>
@@ -54,7 +50,6 @@
                         <p>A tranquil sanctuary completely trusted and cherished by our community.</p>
                     </div>
                 </div>
-                <!-- Circle 3 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="5" data-suffix=" Years">0</h3>
@@ -66,13 +61,11 @@
         </div>
     </section>
 
-    <!-- EDITORIAL RITUALS SECTION (SCROLLABLE) -->
     <section id="rituals" class="editorial-rituals">
         <div class="container">
             <h2 class="editorial-heading text-center">SIGNATURE RITUALS</h2>
-            
+
             <div class="editorial-scroll-container">
-                <!-- Card 1 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Deep Tissue" class="editorial-img">
                     <div class="editorial-info">
@@ -81,7 +74,6 @@
                         <p class="editorial-price">from R 1,200 a session</p>
                     </div>
                 </div>
-                <!-- Card 2 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Facial" class="editorial-img">
                     <div class="editorial-info">
@@ -90,7 +82,6 @@
                         <p class="editorial-price">from R 850 a session</p>
                     </div>
                 </div>
-                <!-- Card 3 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png" alt="Detox Soak" class="editorial-img">
                     <div class="editorial-info">
@@ -101,13 +92,11 @@
                 </div>
             </div>
 
-            <!-- Scroll indicator -->
             <div class="scroll-indicator">Scroll <span>&#8594;</span></div>
         </div>
     </section>
 
-    <!-- EDITORIAL PRESS SECTION (REPLICATING THE REFERENCE) -->
-        <section id="reviews" class="press-section">
+    <section id="reviews" class="press-section">
         <div class="press-content">
             <h2 class="press-heading text-center">IN THE PRESS</h2>
             <div class="press-grid">
@@ -127,6 +116,15 @@
                     <p class="press-author">- Fairhill Journal</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="socials-section">
+        <h2>Connect With Us</h2>
+        <div class="social-buttons">
+            <a href="#" class="social-btn">Instagram</a>
+            <a href="#" class="social-btn">Facebook</a>
+            <a href="#" class="social-btn">TikTok</a>
         </div>
     </section>
 
@@ -153,9 +151,9 @@
         </div>
     </footer>
 
-    <!-- DECIMAL COUNTER & ANIMATION SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // 1. Metric Counters Logic
             const counters = document.querySelectorAll('.metric-number');
             const animateCounters = () => {
                 counters.forEach(counter => {
@@ -185,17 +183,29 @@
                 });
             };
 
+            // 2. Slide-In Reviews Logic
+            const slideElements = document.querySelectorAll('.slide-in');
+
+            // 3. Observer to trigger animations when scrolling
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
                         animateCounters();
                         observer.unobserve(entry.target); 
                     }
+                    if(entry.isIntersecting && entry.target.classList.contains('slide-in')) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
                 });
             }, { threshold: 0.2 }); 
 
+            // Attach observer to metrics
             const metricsSection = document.querySelector('.metrics-section');
             if(metricsSection) observer.observe(metricsSection);
+
+            // Attach observer to review cards
+            slideElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
