@@ -146,7 +146,7 @@ nav a:hover {
     line-height: 2; 
 }
 
-/* --- GLASSMORPHIC METRICS SECTION --- */
+/* --- GLASSMORPHIC METRICS SECTION (WITH GLOW) --- */
 .metrics-section {
     padding: 120px 20px;
     position: relative;
@@ -180,8 +180,10 @@ nav a:hover {
     width: 320px; 
     height: 320px; 
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(26, 54, 34, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Adds the deep, bright forest green glow */
+    box-shadow: 0 0 25px rgba(26, 54, 34, 0.4); 
+    border: 1px solid rgba(26, 54, 34, 0.2);
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -192,7 +194,8 @@ nav a:hover {
 }
 .metric-circle:hover { 
     transform: translateY(-8px); 
-    box-shadow: 0 15px 30px rgba(26, 54, 34, 0.15); 
+    /* Enhances the glow intensely on hover */
+    box-shadow: 0 10px 40px rgba(26, 54, 34, 0.65); 
 }
 .metric-number { 
     font-size: 3rem; 
@@ -374,7 +377,7 @@ nav a:hover {
 .press-card.slide-in:nth-child(3) { transition-delay: 0.4s; }
 
 
-/* --- LUXURY SOCIALS SECTION --- */
+/* --- STACKED ALBUM SOCIALS SECTION --- */
 .socials-section { 
     padding: 120px 20px; 
     background-color: var(--bg-pearl);
@@ -393,28 +396,43 @@ nav a:hover {
     font-size: 0.9rem;
     color: var(--text-muted);
     letter-spacing: 2px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     text-decoration: none;
     transition: color 0.3s;
 }
 .social-handle:hover {
     color: var(--forest-green);
 }
-.socials-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; 
-    margin-bottom: 50px;
+
+/* Staggered stack logic */
+.socials-stack {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 80px auto;
 }
 .social-img {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
-    aspect-ratio: 1 / 1; 
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    border-radius: 20px; /* Soft corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.social-img:hover {
-    transform: scale(1.03); 
-}
+
+/* Base rotated states for the album look */
+.stack-1 { transform: rotate(-8deg) translate(-25px, 15px) scale(0.9); z-index: 1; opacity: 0.7; }
+.stack-2 { transform: rotate(6deg) translate(25px, 5px) scale(0.95); z-index: 2; opacity: 0.85; }
+.stack-3 { transform: rotate(-3deg) translate(-10px, -10px) scale(0.98); z-index: 3; opacity: 0.95; }
+.stack-top { transform: rotate(0deg) translate(0, 0); z-index: 4; }
+
+/* Fanning out gently on hover */
+.socials-stack:hover .stack-1 { transform: rotate(-15deg) translate(-45px, 25px) scale(0.9); opacity: 0.9; }
+.socials-stack:hover .stack-2 { transform: rotate(12deg) translate(45px, 15px) scale(0.95); opacity: 0.95; }
+.socials-stack:hover .stack-3 { transform: rotate(-6deg) translate(-25px, -15px) scale(0.98); opacity: 1; }
+
 .social-buttons { 
     display: flex; 
     justify-content: center; 
@@ -425,7 +443,7 @@ nav a:hover {
     border: 1px solid var(--forest-green);
     color: var(--forest-green); 
     text-decoration: none; 
-    border-radius: 30px;
+    border-radius: 30px; /* Pill shaped */
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem; 
     font-weight: 400; 
@@ -483,9 +501,9 @@ nav a:hover {
     .editorial-heading, .press-heading { font-size: 1.8rem; }
     .press-grid { grid-template-columns: 1fr; gap: 40px; } /* Stacks quotes on phone */
 
-    /* Socials */
+    /* Socials Album Stack Sizing for Mobile */
     .socials-heading { font-size: 1.8rem; letter-spacing: 4px; }
-    .socials-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* 2x2 grid on phone */
+    .socials-stack { width: 260px; height: 260px; margin-bottom: 60px; }
     .social-buttons { flex-direction: column; align-items: center; }
     .social-btn { width: 200px; text-align: center; }
 
