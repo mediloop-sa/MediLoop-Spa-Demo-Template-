@@ -1216,6 +1216,76 @@ nav a:hover {
 }
 
 /* =========================================
+   NEW SPLIT EDITORIAL SUBPAGE HERO
+   ========================================= */
+
+.subpage-hero-new {
+    height: 45vh; 
+    background-color: var(--forest-green); 
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: -60px; 
+    padding-top: 60px;
+}
+.hero-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.hero-left {
+    text-align: left;
+    max-width: 600px;
+}
+.hero-left h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 3.5rem;
+    color: #FFFFFF;
+    margin: 0 0 15px 0;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+.hero-line {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    width: 80px; 
+    margin: 0 0 20px 0;
+}
+.hero-left p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+.btn-glass {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 30px; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+}
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
    MOBILE RESPONSIVE ADJUSTMENTS
    ========================================= */
 @media (max-width: 768px) {
@@ -1292,4 +1362,9 @@ nav a:hover {
     .article-content { width: 100%; padding: 30px 20px; text-align: center; }
     .read-more { justify-content: center; }
     .final-quote-text { font-size: 1.6rem; }
+
+    /* Split Hero Mobile Fixes */
+    .subpage-hero-new { height: auto; padding: 120px 20px 60px 20px; }
+    .hero-split { flex-direction: column; align-items: flex-start; gap: 40px; }
+    .hero-left h1 { font-size: 2.5rem; }
 }
