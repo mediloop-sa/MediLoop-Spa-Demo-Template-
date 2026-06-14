@@ -478,6 +478,77 @@ nav a:hover {
 .footer-bottom a { color: #ffffff; text-decoration: none; font-weight: 600;}
 
 /* =========================================
+   ABOUT PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Shorter Hero for Subpages */
+.subpage-hero {
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+/* Philosophy Split Section */
+.about-philosophy {
+    padding: 120px 20px;
+    background-color: var(--bg-pearl);
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.about-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 2;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    border: 1px solid rgba(26, 54, 34, 0.1);
+}
+
+/* Mission, Vision, Promise Section */
+.mvp-section {
+    background-color: #F5F2EB; /* Warm editorial beige */
+    padding: 100px 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.mvp-box {
+    padding: 50px 30px;
+    background: #FFFFFF;
+    text-align: left;
+    border: 1px solid rgba(26, 54, 34, 0.1);
+    transition: transform 0.4s ease;
+}
+.mvp-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 54, 34, 0.05);
+}
+.mvp-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: var(--forest-green);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 1px solid rgba(26, 54, 34, 0.1);
+    padding-bottom: 15px;
+}
+.mvp-box p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* =========================================
    MOBILE RESPONSIVE ADJUSTMENTS
    ========================================= */
 @media (max-width: 768px) {
@@ -514,4 +585,9 @@ nav a:hover {
 
     /* Footer */
     .footer-grid { flex-direction: column; text-align: center; }
+
+    /* About Page Mobile Fixes */
+    .subpage-hero { height: 40vh; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-image img { min-height: 300px; }
 }
