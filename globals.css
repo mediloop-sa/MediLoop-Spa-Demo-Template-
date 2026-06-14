@@ -552,7 +552,7 @@ nav a:hover {
    ABOUT PAGE: LUXURY EDITORIAL STYLES
    ========================================= */
 
-/* 1. Focus Reveal Hero (The "Ripple" Alternative) */
+/* 1. Focus Reveal Hero */
 .subpage-hero {
     height: 70vh;
     background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Payment%20background.jpg') center/cover no-repeat;
@@ -572,7 +572,7 @@ nav a:hover {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(26, 54, 34, 0.4); /* Dark green tint */
+    background: rgba(26, 54, 34, 0.4); 
 }
 .reveal-text {
     opacity: 0;
@@ -586,7 +586,7 @@ nav a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 2. Philosophy Sticky Scroll */
+/* 2. Philosophy Infinite Vertical Scroll */
 .philosophy-sticky-section {
     padding: 120px 20px;
     background-color: var(--bg-pearl);
@@ -595,11 +595,11 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start; /* Crucial for sticky to work */
+    align-items: start; 
 }
 .philosophy-text-sticky {
     position: sticky;
-    top: 150px; /* Pins it 150px from the top of the screen */
+    top: 150px; 
 }
 .philosophy-text-sticky p {
     font-size: 1rem;
@@ -608,35 +608,51 @@ nav a:hover {
     margin-bottom: 25px;
     font-weight: 300;
 }
-.philosophy-images {
+.philosophy-image-window {
+    height: 80vh; /* Creates a fixed window */
+    overflow: hidden; /* Hides images outside the window */
+    position: relative;
+    border-radius: 20px;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); /* Fades top and bottom smoothly */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+.philosophy-image-track {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    animation: scrollVertical 25s linear infinite;
 }
 .scroll-img {
-    width: 90%;
-    height: 500px;
+    width: 100%;
+    height: 450px;
     object-fit: cover;
     border-radius: 20px;
+    margin-bottom: 30px; /* Space between images */
+    flex-shrink: 0;
 }
-.offset-right {
-    align-self: flex-end; /* Pushes the middle image to the right for an editorial stagger */
+/* Pauses the scroll if the user hovers over the images */
+.philosophy-image-window:hover .philosophy-image-track {
+    animation-play-state: paused; 
+}
+@keyframes scrollVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); } /* Scrolls exactly halfway (the 3 duplicated images) to loop perfectly */
 }
 
-/* 3. The Quote Break (Your Idea!) */
+/* 3. The Quote Break (Slick fading lines, no background) */
 .quote-break-section {
     padding: 80px 20px;
-    background-color: #F5F2EB; /* Soft editorial beige */
+    background-color: var(--bg-pearl); /* Match page background */
 }
-.elegant-line {
+.slick-fade-line {
     border: 0;
     height: 1px;
-    background: rgba(26, 54, 34, 0.15);
-    width: 60px;
+    /* Fades out smoothly at the edges */
+    background: linear-gradient(90deg, transparent, rgba(26, 54, 34, 0.4), transparent);
+    width: 100%;
     margin: 0 auto;
 }
 .quote-break-text {
-    font-family: Georgia, serif; /* Classic editorial font */
+    font-family: Georgia, serif; 
     font-size: 1.8rem;
     font-style: italic;
     font-weight: 300;
@@ -667,11 +683,11 @@ nav a:hover {
 }
 .accordion-item {
     position: relative;
-    flex: 1; /* Starts small */
-    border-radius: 20px; /* Soft cool corners */
+    flex: 1; 
+    border-radius: 20px; 
     overflow: hidden;
     cursor: pointer;
-    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Buttery smooth expansion */
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
 }
 .accordion-item img {
     position: absolute;
@@ -682,7 +698,7 @@ nav a:hover {
 .accordion-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(26, 54, 34, 0.6); /* Dark green tint */
+    background: rgba(26, 54, 34, 0.6); 
     transition: background 0.6s ease;
     display: flex;
     align-items: center;
@@ -711,26 +727,25 @@ nav a:hover {
     letter-spacing: 4px;
     margin-bottom: 10px;
 }
-/* The Hover Magic */
 .accordion-item:hover {
-    flex: 4; /* Expands to take up the space */
+    flex: 4; 
 }
 .accordion-item:hover .accordion-overlay {
-    background: rgba(0, 0, 0, 0.2); /* Clears the tint */
+    background: rgba(0, 0, 0, 0.2); 
 }
 .accordion-item:hover .vertical-title {
-    opacity: 0; /* Hides vertical text */
+    opacity: 0; 
 }
 .accordion-item:hover .accordion-content {
-    opacity: 1; /* Shows the paragraph */
+    opacity: 1; 
     transform: translateY(0);
     transition-delay: 0.3s;
 }
 
-/* 5. Manifesto Marquee */
+/* 5. Manifesto Marquee (Slim & Pill) */
 .manifesto-marquee {
     position: relative;
-    height: 400px;
+    height: 250px; /* Slimmer section */
     background-color: var(--forest-green);
     display: flex;
     align-items: center;
@@ -740,7 +755,7 @@ nav a:hover {
 .marquee-bg {
     position: absolute;
     white-space: nowrap;
-    opacity: 0.05; /* Extremely subtle */
+    opacity: 0.05; 
     font-family: 'Montserrat', sans-serif;
     font-size: 8rem;
     font-weight: 600;
@@ -751,21 +766,22 @@ nav a:hover {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
-.manifesto-glass-box {
+.manifesto-pill-box {
     position: relative;
     z-index: 2;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px 60px;
-    border-radius: 20px;
+    padding: 20px 60px;
+    border-radius: 100px; /* Forces a perfect pill shape */
 }
-.manifesto-glass-box h3 {
+.manifesto-pill-box h3 {
     color: white;
-    font-family: Georgia, serif;
-    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.2rem; /* Adjusted for capitals */
+    text-transform: uppercase;
+    letter-spacing: 4px;
     margin: 0;
 }
 
@@ -812,14 +828,14 @@ nav a:hover {
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-image img { min-height: 300px; }
 
-    /* About Page Mobile Fixes */
+        /* About Page Mobile Fixes */
     .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
-    .philosophy-text-sticky { position: static; } /* Disables sticky on mobile */
-    .scroll-img { width: 100%; height: 350px; }
-    .offset-right { align-self: center; }
+    .philosophy-text-sticky { position: static; }
+    .philosophy-image-window { height: 50vh; } /* Shorter scroll window on phone */
+    .scroll-img { height: 300px; }
     .quote-break-text { font-size: 1.4rem; }
-    .accordion-container { flex-direction: column; height: 800px; } /* Stacks the accordion vertically */
+    .accordion-container { flex-direction: column; height: 800px; }
     .vertical-title { writing-mode: horizontal-tb; transform: none; }
-    .manifesto-glass-box { margin: 0 20px; padding: 30px 20px; text-align: center; }
-    .manifesto-glass-box h3 { font-size: 1.5rem; }
+    .manifesto-pill-box { margin: 0 20px; padding: 20px 30px; text-align: center; border-radius: 50px; }
+    .manifesto-pill-box h3 { font-size: 1rem; }
 }
