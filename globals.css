@@ -186,7 +186,6 @@ nav a:hover {
     height: 320px; 
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.85);
-    /* Adds the deep, bright forest green glow */
     box-shadow: 0 0 25px rgba(26, 54, 34, 0.4); 
     border: 1px solid rgba(26, 54, 34, 0.2);
     display: flex; 
@@ -199,7 +198,6 @@ nav a:hover {
 }
 .metric-circle:hover { 
     transform: translateY(-8px); 
-    /* Enhances the glow intensely on hover */
     box-shadow: 0 10px 40px rgba(26, 54, 34, 0.65); 
 }
 .metric-number { 
@@ -408,8 +406,6 @@ nav a:hover {
 .social-handle:hover {
     color: var(--forest-green);
 }
-
-/* Staggered stack logic */
 .socials-stack {
     position: relative;
     width: 320px;
@@ -422,18 +418,15 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px; /* Soft corners */
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-/* Base rotated states for the album look */
 .stack-1 { transform: rotate(-8deg) translate(-25px, 15px) scale(0.9); z-index: 1; opacity: 0.7; }
 .stack-2 { transform: rotate(6deg) translate(25px, 5px) scale(0.95); z-index: 2; opacity: 0.85; }
 .stack-3 { transform: rotate(-3deg) translate(-10px, -10px) scale(0.98); z-index: 3; opacity: 0.95; }
 .stack-top { transform: rotate(0deg) translate(0, 0); z-index: 4; }
 
-/* Fanning out gently on hover */
 .socials-stack:hover .stack-1 { transform: rotate(-15deg) translate(-45px, 25px) scale(0.9); opacity: 0.9; }
 .socials-stack:hover .stack-2 { transform: rotate(12deg) translate(45px, 15px) scale(0.95); opacity: 0.95; }
 .socials-stack:hover .stack-3 { transform: rotate(-6deg) translate(-25px, -15px) scale(0.98); opacity: 1; }
@@ -448,7 +441,7 @@ nav a:hover {
     border: 1px solid var(--forest-green);
     color: var(--forest-green); 
     text-decoration: none; 
-    border-radius: 30px; /* Pill shaped */
+    border-radius: 30px; 
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem; 
     font-weight: 400; 
@@ -477,76 +470,6 @@ nav a:hover {
 .footer-bottom { border-top: 1px solid #222; padding-top: 30px; text-align: center; color: #666; font-size: 0.8rem; letter-spacing: 1px; }
 .footer-bottom a { color: #ffffff; text-decoration: none; font-weight: 600;}
 
-/* =========================================
-   ABOUT PAGE SPECIFIC STYLES
-   ========================================= */
-
-/* Shorter Hero for Subpages */
-.subpage-hero {
-    height: 60vh;
-    background: url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    background-attachment: fixed; /* Parallax effect */
-}
-
-/* Philosophy Split Section */
-.about-philosophy {
-    padding: 120px 20px;
-    background-color: var(--bg-pearl);
-}
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-.about-text p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 2;
-    margin-bottom: 25px;
-    font-weight: 300;
-}
-.about-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    object-fit: cover;
-    border: 1px solid rgba(26, 54, 34, 0.1);
-}
-
-/* Mission, Vision, Promise Section */
-.mvp-section {
-    background-color: #F5F2EB; /* Warm editorial beige */
-    padding: 100px 20px;
-    border-top: 1px solid rgba(0,0,0,0.05);
-}
-.mvp-box {
-    padding: 50px 30px;
-    background: #FFFFFF;
-    text-align: left;
-    border: 1px solid rgba(26, 54, 34, 0.1);
-    transition: transform 0.4s ease;
-}
-.mvp-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(26, 54, 34, 0.05);
-}
-.mvp-box h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    font-size: 1.5rem;
-    color: var(--forest-green);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    border-bottom: 1px solid rgba(26, 54, 34, 0.1);
-    padding-bottom: 15px;
-}
-.mvp-box p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-}
 
 /* =========================================
    ABOUT PAGE: LUXURY EDITORIAL STYLES
@@ -609,11 +532,11 @@ nav a:hover {
     font-weight: 300;
 }
 .philosophy-image-window {
-    height: 80vh; /* Creates a fixed window */
-    overflow: hidden; /* Hides images outside the window */
+    height: 80vh; 
+    overflow: hidden; 
     position: relative;
     border-radius: 20px;
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); /* Fades top and bottom smoothly */
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); 
     -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 .philosophy-image-track {
@@ -626,27 +549,25 @@ nav a:hover {
     height: 450px;
     object-fit: cover;
     border-radius: 20px;
-    margin-bottom: 30px; /* Space between images */
+    margin-bottom: 30px; 
     flex-shrink: 0;
 }
-/* Pauses the scroll if the user hovers over the images */
 .philosophy-image-window:hover .philosophy-image-track {
     animation-play-state: paused; 
 }
 @keyframes scrollVertical {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); } /* Scrolls exactly halfway (the 3 duplicated images) to loop perfectly */
+    100% { transform: translateY(-50%); } 
 }
 
-/* 3. The Quote Break (Slick fading lines, no background) */
+/* 3. The Quote Break */
 .quote-break-section {
     padding: 80px 20px;
-    background-color: var(--bg-pearl); /* Match page background */
+    background-color: var(--bg-pearl); 
 }
 .slick-fade-line {
     border: 0;
     height: 1px;
-    /* Fades out smoothly at the edges */
     background: linear-gradient(90deg, transparent, rgba(26, 54, 34, 0.4), transparent);
     width: 100%;
     margin: 0 auto;
@@ -673,6 +594,14 @@ nav a:hover {
 .accordion-section {
     padding: 120px 20px;
     background-color: var(--bg-pearl);
+}
+.accordion-hint {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(26, 54, 34, 0.4); 
+    margin-bottom: 50px; 
 }
 .accordion-container {
     display: flex;
@@ -741,19 +670,11 @@ nav a:hover {
     transform: translateY(0);
     transition-delay: 0.3s;
 }
-.accordion-hint {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: rgba(26, 54, 34, 0.4); /* Beautifully faded forest green */
-    margin-bottom: 50px; /* Restores the spacing before the images start */
-}
 
 /* 5. Manifesto Marquee (Slim & Pill) */
 .manifesto-marquee {
     position: relative;
-    height: 250px; /* Slimmer section */
+    height: 250px; 
     background-color: var(--forest-green);
     display: flex;
     align-items: center;
@@ -770,10 +691,6 @@ nav a:hover {
     color: white;
     animation: scrollMarquee 40s linear infinite;
 }
-@keyframes scrollMarquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
 .manifesto-pill-box {
     position: relative;
     z-index: 2;
@@ -781,17 +698,226 @@ nav a:hover {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 60px;
-    border-radius: 100px; /* Forces a perfect pill shape */
+    border-radius: 100px; 
 }
 .manifesto-pill-box h3 {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 1.2rem; /* Adjusted for capitals */
+    font-size: 1.2rem; 
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 0;
 }
+
+
+/* =========================================
+   RITUALS & SERVICES PAGE STYLES
+   ========================================= */
+
+/* 1. Breathing Hero */
+.breathing-hero {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+.breathing-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(10, 20, 15, 0.5), rgba(10, 20, 15, 0.5)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/MediLoop%20Websites.png') center/cover no-repeat;
+    animation: breatheHero 10s infinite alternate ease-in-out;
+}
+@keyframes breatheHero {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.04); } /* Gentle 4% zoom mimicking a breath */
+}
+
+/* 2. Interactive Mood Menu */
+.mood-menu-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+.mood-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+}
+.mood-bg.active {
+    opacity: 1;
+}
+.mood-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mood-filter-bar {
+    text-align: center;
+    margin-bottom: 80px;
+    width: 100%;
+}
+.mood-prompt {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+.mood-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mood-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.mood-btn:hover, .mood-btn.active {
+    background: #FFFFFF;
+    color: var(--forest-green);
+    border-color: #FFFFFF;
+}
+
+/* 3. Expandable Treatment Lists */
+.mood-lists-container {
+    width: 100%;
+    max-width: 800px;
+}
+.mood-list {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+.mood-list.active {
+    display: flex;
+    animation: fadeInList 0.8s ease forwards;
+}
+@keyframes fadeInList {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.treatment-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.treatment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    cursor: pointer;
+}
+.treatment-title-area h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+    text-transform: none;
+}
+.treatment-meta {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.treatment-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.treatment-expansion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.treatment-item.expanded .treatment-expansion {
+    max-height: 300px; /* Provides enough room to slide open smoothly */
+}
+.botanicals {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 10px 0 25px 0;
+}
+.btn-reserve {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #FFFFFF;
+    color: var(--forest-green);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+.btn-reserve:hover {
+    transform: translateY(-2px);
+}
+
+/* 4. The Gift Card Bookend Section */
+.gift-card-section {
+    background-color: rgba(20, 40, 25, 1); /* Very dark olive/forest green */
+    padding: 120px 20px;
+}
+.gift-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.gift-text p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+.btn-transparent {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+.btn-transparent:hover {
+    background: #FFFFFF;
+    color: var(--forest-green);
+}
+.gift-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
 
 /* =========================================
    MOBILE RESPONSIVE ADJUSTMENTS
@@ -818,11 +944,11 @@ nav a:hover {
     .metrics-glass-box { padding: 40px 20px; }
     .metric-circle { width: 280px; height: 280px; }
 
-    /* Rituals & Press */
+    /* Rituals & Press Main Page */
     .editorial-heading, .press-heading { font-size: 1.8rem; }
-    .press-grid { grid-template-columns: 1fr; gap: 40px; } /* Stacks quotes on phone */
+    .press-grid { grid-template-columns: 1fr; gap: 40px; } 
 
-    /* Socials Album Stack Sizing for Mobile */
+    /* Socials Album Stack */
     .socials-heading { font-size: 1.8rem; letter-spacing: 4px; }
     .socials-stack { width: 260px; height: 260px; margin-bottom: 60px; }
     .social-buttons { flex-direction: column; align-items: center; }
@@ -831,19 +957,21 @@ nav a:hover {
     /* Footer */
     .footer-grid { flex-direction: column; text-align: center; }
 
-    /* About Page Mobile Fixes */
-    .subpage-hero { height: 40vh; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .about-image img { min-height: 300px; }
-
-        /* About Page Mobile Fixes */
+    /* About Page */
     .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
     .philosophy-text-sticky { position: static; }
-    .philosophy-image-window { height: 50vh; } /* Shorter scroll window on phone */
+    .philosophy-image-window { height: 50vh; } 
     .scroll-img { height: 300px; }
     .quote-break-text { font-size: 1.4rem; }
     .accordion-container { flex-direction: column; height: 800px; }
     .vertical-title { writing-mode: horizontal-tb; transform: none; }
     .manifesto-pill-box { margin: 0 20px; padding: 20px 30px; text-align: center; border-radius: 50px; }
     .manifesto-pill-box h3 { font-size: 1rem; }
+
+    /* Rituals/Services Page */
+    .mood-prompt { font-size: 1.2rem; }
+    .treatment-title-area h3 { font-size: 1.1rem; }
+    .treatment-price { font-size: 1rem; }
+    .gift-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .gift-image img { height: 300px; }
 }
