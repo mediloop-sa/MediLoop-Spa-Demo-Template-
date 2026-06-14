@@ -3,50 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Spa | Services</title>
+    <title>MediLoop | Rituals & Services</title>
     <link rel="stylesheet" href="globals.css">
 </head>
 <body>
 
+    <!-- PERFECTED NAVIGATION BAR -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="explore.html">Explore</a>
-        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="rituals.html">Rituals</a>
+        <a href="index.html#metrics">Impact</a>
+        <a href="index.html#reviews">Press</a>
     </nav>
 
-    <section>
-        <h1>Signature Treatments</h1>
-
-        <div>
-            <div class="menu-item">
-                <span class="treatment-name">Deep Tissue Massage (60 Min)</span>
-                <span class="treatment-price">R850</span>
-            </div>
-            <div class="treatment-desc">Intensive therapy targeting deep muscle layers to relieve chronic tension and soreness.</div>
+    <!-- THE BREATH: SLOW SCALING HERO -->
+    <header class="hero breathing-hero">
+        <div class="hero-content">
+            <h1 class="reveal-text">SURRENDER TO THE PROCESS</h1>
+            <p class="hero-quote" style="animation: fadeUpText 2s ease 1s forwards; opacity: 0;">Explore our curated treatments.</p>
         </div>
+    </header>
 
-        <div>
-            <div class="menu-item">
-                <span class="treatment-name">Radiance Botanical Facial (45 Min)</span>
-                <span class="treatment-price">R650</span>
+    <!-- IMMERSIVE MOOD MENU SECTION -->
+    <section class="mood-menu-section">
+        <!-- The Shifting Backgrounds (Tinted) -->
+        <div class="mood-bg active" id="bg-grounded" style="background-image: linear-gradient(rgba(26, 54, 34, 0.85), rgba(26, 54, 34, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png');"></div>
+        <div class="mood-bg" id="bg-radiant" style="background-image: linear-gradient(rgba(45, 35, 25, 0.85), rgba(45, 35, 25, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png');"></div>
+        <div class="mood-bg" id="bg-detoxified" style="background-image: linear-gradient(rgba(15, 35, 40, 0.85), rgba(15, 35, 40, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png');"></div>
+        <div class="mood-bg" id="bg-weightless" style="background-image: linear-gradient(rgba(30, 45, 35, 0.85), rgba(30, 45, 35, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/SocialMedia3.png');"></div>
+
+        <div class="container mood-content-wrapper">
+            <!-- Sticky Filter Bar -->
+            <div class="mood-filter-bar">
+                <h3 class="mood-prompt">I WANT TO FEEL...</h3>
+                <div class="mood-buttons">
+                    <button class="mood-btn active" data-mood="grounded">[ GROUNDED ]</button>
+                    <button class="mood-btn" data-mood="radiant">[ RADIANT ]</button>
+                    <button class="mood-btn" data-mood="detoxified">[ DETOXIFIED ]</button>
+                    <button class="mood-btn" data-mood="weightless">[ WEIGHTLESS ]</button>
+                </div>
             </div>
-            <div class="treatment-desc">A revitalizing treatment using wild-harvested botanicals to restore your natural glow.</div>
-        </div>
 
-        <div>
-            <div class="menu-item">
-                <span class="treatment-name">Full Body Detox Wrap (90 Min)</span>
-                <span class="treatment-price">R1200</span>
+            <!-- Service Lists Container -->
+            <div class="mood-lists-container">
+                
+                <!-- GROUNDED LIST -->
+                <div class="mood-list active" id="list-grounded">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Deep Tissue Harmony</h3>
+                                <span class="treatment-meta">90 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 1,200</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Cold-Pressed Eucalyptus, Himalayan Cedarwood, Organic Arnica.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Hot Stone Grounding</h3>
+                                <span class="treatment-meta">75 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 950</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Basalt Volcanic Stones, Sweet Almond Oil, Sandalwood.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RADIANT LIST -->
+                <div class="mood-list" id="list-radiant">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Luminous Glow Facial</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 850</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Organic Rosehip, Vitamin C Serum, White Tea Extract.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Citrus Body Polish</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 650</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Crushed Walnut Shell, Grapefruit Essence, Jojoba Oil.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETOXIFIED LIST -->
+                <div class="mood-list" id="list-detoxified">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Mineral Detox Soak</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 600</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Dead Sea Salts, Activated Charcoal, Juniper Berry.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Lymphatic Drainage</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 900</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Cypress Oil, Lemon Balm, Rosemary Extract.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEIGHTLESS LIST -->
+                <div class="mood-list" id="list-weightless">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Flotation Therapy</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 750</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: 1000lbs Epsom Salt, Body-Temperature Water, Sensory Deprivation.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Acoustic Sound Bath</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 500</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: Quartz Crystal Bowls, Binaural Beats, Guided Meditation.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="treatment-desc">An immersive thermal wrap using mineral-rich clay to purify and deeply hydrate the skin.</div>
-        </div>
-
-        <div class="btn-container">
-            <a href="https://mediloop.co.za" class="btn">Book Now</a>
         </div>
     </section>
 
+    <!-- THE GIFT CARD SECTION (BOTTOM BOOKEND) -->
+    <section class="gift-card-section">
+        <div class="container gift-grid">
+            <div class="gift-text">
+                <h2 class="editorial-heading" style="color: #FFFFFF; margin-bottom: 20px;">THE GIFT OF SANCTUARY</h2>
+                <p>Share the ultimate luxury: time to breathe. Our beautifully physical and digital gift cards allow your loved ones to select the exact ritual their body needs.</p>
+                <a href="#" class="btn-transparent">Purchase a Gift Card</a>
+            </div>
+            <div class="gift-image">
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media.png" alt="Gift of Spa">
+            </div>
+        </div>
+    </section>
+
+    <!-- STRICT DARK FOOTER -->
+    <footer class="footer-dark">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: hello@mediloopspa.co.za</p>
+                <p>Phone: +27 12 345 6789</p>
+            </div>
+            <div class="footer-col">
+                <h4>Operating Hours</h4>
+                <p>Monday - Friday</p>
+                <p>08h00 - 17h00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Powered by <a href="https://mediloop.co.za">MediLoop Websites</a></p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MOOD MENU JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Background Shifting Logic
+            const moodBtns = document.querySelectorAll('.mood-btn');
+            const moodBgs = document.querySelectorAll('.mood-bg');
+            const moodLists = document.querySelectorAll('.mood-list');
+
+            moodBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-mood');
+                    
+                    // Remove active states
+                    moodBtns.forEach(b => b.classList.remove('active'));
+                    moodBgs.forEach(bg => bg.classList.remove('active'));
+                    moodLists.forEach(list => list.classList.remove('active'));
+                    
+                    // Add active state to clicked elements
+                    btn.classList.add('active');
+                    document.getElementById('bg-' + target).classList.add('active');
+                    document.getElementById('list-' + target).classList.add('active');
+                });
+            });
+
+            // Treatment Accordion Expansion Logic
+            const treatmentHeaders = document.querySelectorAll('.treatment-header');
+            treatmentHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Close others (optional, but keeps menu clean)
+                    const parent = header.parentElement;
+                    const currentlyExpanded = document.querySelector('.treatment-item.expanded');
+                    if(currentlyExpanded && currentlyExpanded !== parent) {
+                        currentlyExpanded.classList.remove('expanded');
+                    }
+                    // Toggle the clicked one
+                    parent.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
