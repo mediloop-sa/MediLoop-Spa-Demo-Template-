@@ -167,6 +167,11 @@ nav a:hover {
     text-align: center;
 }
 .metrics-glass-box .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
     color: var(--forest-green);
     margin-bottom: 60px;
 }
