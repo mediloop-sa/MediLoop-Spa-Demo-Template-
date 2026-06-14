@@ -741,6 +741,14 @@ nav a:hover {
     transform: translateY(0);
     transition-delay: 0.3s;
 }
+.accordion-hint {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(26, 54, 34, 0.4); /* Beautifully faded forest green */
+    margin-bottom: 50px; /* Restores the spacing before the images start */
+}
 
 /* 5. Manifesto Marquee (Slim & Pill) */
 .manifesto-marquee {
