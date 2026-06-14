@@ -1246,6 +1246,7 @@ nav a:hover {
     margin: 0 0 15px 0;
     letter-spacing: 6px;
     text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adds contrast against images */
 }
 .hero-line {
     border: 0;
@@ -1257,10 +1258,11 @@ nav a:hover {
 .hero-left p {
     font-family: Georgia, serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
+    color: #FFFFFF; /* Changed to pure white */
     font-size: 1.2rem;
     margin: 0;
     letter-spacing: 1px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 .btn-glass {
     display: inline-block;
