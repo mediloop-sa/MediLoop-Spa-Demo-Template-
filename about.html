@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- PERFECTED NAVIGATION BAR -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -17,51 +16,86 @@
         <a href="index.html#reviews">Press</a>
     </nav>
 
-    <!-- SUBPAGE HERO SECTION -->
-    <header class="hero subpage-hero">
+    <header class="hero subpage-hero focus-reveal">
         <div class="hero-content">
-            <h1>OUR STORY</h1>
+            <h1 class="reveal-text">OUR STORY</h1>
         </div>
     </header>
 
-    <!-- THE PHILOSOPHY SECTION (SPLIT GRID) -->
-    <section class="about-philosophy">
-        <div class="container about-grid">
-            <div class="about-text">
-                <h2 class="editorial-heading" style="color: var(--forest-green); margin-bottom: 30px;">THE PHILOSOPHY</h2>
-                <p>We believe that wellness is a deeply personal journey. Founded on the principles of holistic healing, our sanctuary was designed to be an absolute refuge from the relentless noise of the outside world.</p>
-                <p>Our expert therapists use organic, locally-sourced botanicals to craft treatments that not only relax the physical body but entirely restore the mind. Every detail—from the pearl white walls to the curated acoustic environment—has been meticulously designed to bring you back to your true center.</p>
+    <section class="philosophy-sticky-section">
+        <div class="container philosophy-grid">
+            <div class="philosophy-text-wrapper">
+                <div class="philosophy-text-sticky">
+                    <h2 class="editorial-heading" style="color: var(--forest-green); margin-bottom: 30px;">THE PHILOSOPHY</h2>
+                    <p>We believe that wellness is a deeply personal journey. Founded on the principles of holistic healing, our sanctuary was designed to be an absolute refuge from the relentless noise of the outside world.</p>
+                    <p>Our expert therapists use organic, locally-sourced botanicals to craft treatments that not only relax the physical body but entirely restore the mind. Every detail—from the pearl white walls to the curated acoustic environment—has been meticulously designed to bring you back to your true center.</p>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa Environment">
+            
+            <div class="philosophy-images">
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Spa Detail" class="scroll-img">
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media.png" alt="Spa Detail" class="scroll-img offset-right">
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Spa Detail" class="scroll-img">
             </div>
         </div>
     </section>
 
-    <!-- MISSION, VISION, PROMISE SECTION (EDITORIAL BEIGE) -->
-    <section class="mvp-section">
+    <section class="quote-break-section">
+        <div class="container text-center">
+            <hr class="elegant-line">
+            <h3 class="quote-break-text">"Healing is a matter of time, but it is sometimes also a matter of opportunity."</h3>
+            <p class="quote-break-author">— HIPPOCRATES</p>
+            <hr class="elegant-line">
+        </div>
+    </section>
+
+    <section class="accordion-section">
         <div class="container">
-            <div class="grid-3">
-                <!-- Mission -->
-                <div class="mvp-box">
-                    <h3>Our Mission</h3>
-                    <p>To provide an unparalleled environment of peace and clinical excellence, empowering our clients to achieve profound physical and mental restoration.</p>
+            <h2 class="editorial-heading text-center" style="color: var(--forest-green); margin-bottom: 60px;">OUR PROMISE</h2>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/SocialMedia3.png" alt="Mission">
+                    <div class="accordion-overlay">
+                        <h3 class="vertical-title">MISSION</h3>
+                        <div class="accordion-content">
+                            <h3>OUR MISSION</h3>
+                            <p>To provide an unparalleled environment of peace and clinical excellence, empowering our clients to achieve profound physical and mental restoration.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Vision -->
-                <div class="mvp-box">
-                    <h3>Our Vision</h3>
-                    <p>To become the leading sanctuary for holistic wellness, seamlessly blending ancient healing traditions with modern, sophisticated luxury.</p>
+                <div class="accordion-item">
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%204.png" alt="Vision">
+                    <div class="accordion-overlay">
+                        <h3 class="vertical-title">VISION</h3>
+                        <div class="accordion-content">
+                            <h3>OUR VISION</h3>
+                            <p>To become the leading sanctuary for holistic wellness, seamlessly blending ancient healing traditions with modern, sophisticated luxury.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Promise -->
-                <div class="mvp-box">
-                    <h3>Our Promise</h3>
-                    <p>We promise uncompromising attention to detail, complete discretion, and a deeply personalized journey tailored uniquely to your body's needs.</p>
+                <div class="accordion-item">
+                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%202.png" alt="Promise">
+                    <div class="accordion-overlay">
+                        <h3 class="vertical-title">PROMISE</h3>
+                        <div class="accordion-content">
+                            <h3>OUR PROMISE</h3>
+                            <p>We promise uncompromising attention to detail, complete discretion, and a deeply personalized journey tailored uniquely to your body's needs.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STRICT DARK FOOTER -->
+    <section class="manifesto-marquee">
+        <div class="marquee-bg">
+            <span>RESTORE • RECONNECT • RENEW • RESTORE • RECONNECT • RENEW •</span>
+        </div>
+        <div class="manifesto-glass-box">
+            <h3>"Step out of the noise, and into yourself."</h3>
+        </div>
+    </section>
+
     <footer class="footer-dark">
         <div class="footer-grid">
             <div class="footer-col">
