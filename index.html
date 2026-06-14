@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#welcome">About</a>
@@ -32,10 +33,12 @@
         </div>
     </section>
 
+    <!-- GLASSMORPHIC METRICS SECTION -->
     <section id="metrics" class="metrics-section">
         <div class="metrics-glass-box">
             <h2 class="section-title text-center">Sanctuary Impact</h2>
             <div class="cards-grid">
+                <!-- Circle 1 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="15000" data-suffix="+">0</h3>
@@ -43,6 +46,7 @@
                         <p>Curating thousands of personalized journeys to pure, profound relaxation.</p>
                     </div>
                 </div>
+                <!-- Circle 2 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="4.5" data-suffix="/5">0</h3>
@@ -50,6 +54,7 @@
                         <p>A tranquil sanctuary completely trusted and cherished by our community.</p>
                     </div>
                 </div>
+                <!-- Circle 3 -->
                 <div class="metric-circle">
                     <div>
                         <h3 class="metric-number" data-target="5" data-suffix=" Years">0</h3>
@@ -61,11 +66,13 @@
         </div>
     </section>
 
+    <!-- EDITORIAL RITUALS SECTION (SCROLLABLE) -->
     <section id="rituals" class="editorial-rituals">
         <div class="container">
             <h2 class="editorial-heading text-center">SIGNATURE RITUALS</h2>
             
             <div class="editorial-scroll-container">
+                <!-- Card 1 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Deep Tissue" class="editorial-img">
                     <div class="editorial-info">
@@ -74,6 +81,7 @@
                         <p class="editorial-price">from R 1,200 a session</p>
                     </div>
                 </div>
+                <!-- Card 2 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Facial" class="editorial-img">
                     <div class="editorial-info">
@@ -82,6 +90,7 @@
                         <p class="editorial-price">from R 850 a session</p>
                     </div>
                 </div>
+                <!-- Card 3 -->
                 <div class="editorial-card">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png" alt="Detox Soak" class="editorial-img">
                     <div class="editorial-info">
@@ -92,22 +101,34 @@
                 </div>
             </div>
 
+            <!-- Scroll indicator -->
             <div class="scroll-indicator">Scroll <span>&#8594;</span></div>
         </div>
     </section>
 
-    <section id="reviews" class="reviews-section">
-        <h2>In The Press</h2>
-        <div class="reviews-grid">
-            <div class="review-card slide-in">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"An absolute triumph in wellness. The integration of technology and serenity here is unmatched. A true modern sanctuary."</p>
-                <p class="review-author">— Vogue Wellness</p>
-            </div>
-            <div class="review-card slide-in">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The ultimate escape. From the moment you walk in, the atmosphere demands relaxation. Highly recommended."</p>
-                <p class="review-author">— The Lux Insider</p>
+    <!-- EDITORIAL PRESS SECTION (REPLICATING THE REFERENCE) -->
+    <section id="reviews" class="press-section">
+        <div class="press-content">
+            <h2 class="press-heading text-center">In The Press</h2>
+            <div class="press-grid">
+                <!-- Press 1 -->
+                <div class="press-card">
+                    <span class="quote-mark">“</span>
+                    <p class="press-text">Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.</p>
+                    <p class="press-author">- Vogue Wellness</p>
+                </div>
+                <!-- Press 2 -->
+                <div class="press-card">
+                    <span class="quote-mark">“</span>
+                    <p class="press-text">An absolute triumph in wellness. The integration of technology and serenity here is unmatched. A true modern sanctuary designed to elevate your everyday.</p>
+                    <p class="press-author">- The Lux Insider</p>
+                </div>
+                <!-- Press 3 -->
+                <div class="press-card">
+                    <span class="quote-mark">“</span>
+                    <p class="press-text">The ultimate escape. From the moment you walk in, the atmosphere demands relaxation. Highly recommended for anyone seeking profound, lasting peace.</p>
+                    <p class="press-author">- Fairhill Journal</p>
+                </div>
             </div>
         </div>
     </section>
@@ -144,6 +165,7 @@
         </div>
     </footer>
 
+    <!-- DECIMAL COUNTER & ANIMATION SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll('.metric-number');
@@ -175,25 +197,17 @@
                 });
             };
 
-            const slideElements = document.querySelectorAll('.slide-in');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
                         animateCounters();
                         observer.unobserve(entry.target); 
                     }
-                    if(entry.isIntersecting && entry.target.classList.contains('slide-in')) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
                 });
             }, { threshold: 0.2 }); 
 
             const metricsSection = document.querySelector('.metrics-section');
             if(metricsSection) observer.observe(metricsSection);
-
-            slideElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
