@@ -219,7 +219,7 @@ nav a:hover {
     font-weight: 400;
 }
 
-/* --- EDITORIAL RITUALS SECTION --- */
+/* --- EDITORIAL RITUALS SECTION (DARK SCROLLABLE) --- */
 .editorial-rituals {
     background-color: var(--forest-green); 
     padding: 120px 0 80px 0;
@@ -299,7 +299,7 @@ nav a:hover {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* --- EDITORIAL PRESS SECTION --- */
+/* --- EDITORIAL PRESS SECTION (STAGGERED SLIDE-IN) --- */
 .press-section {
     position: relative;
     padding: 150px 20px;
@@ -359,7 +359,7 @@ nav a:hover {
     margin: 0;
 }
 
-/* --- STAGGERED SLIDE-IN ANIMATION --- */
+/* Slide-in Animation Setup */
 .press-card.slide-in {
     opacity: 0;
     transform: translateX(40px); 
@@ -373,17 +373,70 @@ nav a:hover {
 .press-card.slide-in:nth-child(2) { transition-delay: 0.2s; }
 .press-card.slide-in:nth-child(3) { transition-delay: 0.4s; }
 
-/* --- SOCIALS SECTION --- */
-.socials-section { padding: 80px 20px; text-align: center; }
-.socials-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 30px; }
-.social-buttons { display: flex; justify-content: center; gap: 20px; }
+
+/* --- LUXURY SOCIALS SECTION --- */
+.socials-section { 
+    padding: 120px 20px; 
+    background-color: var(--bg-pearl);
+}
+.socials-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--forest-green);
+    margin-bottom: 10px;
+}
+.social-handle {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-handle:hover {
+    color: var(--forest-green);
+}
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+    margin-bottom: 50px;
+}
+.social-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.social-img:hover {
+    transform: scale(1.03); 
+}
+.social-buttons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}
 .social-btn {
-    padding: 12px 30px; border: 1px solid var(--forest-green);
-    color: var(--forest-green); text-decoration: none; border-radius: 30px;
-    font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+    padding: 12px 40px; 
+    border: 1px solid var(--forest-green);
+    color: var(--forest-green); 
+    text-decoration: none; 
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; 
+    font-weight: 400; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
     transition: all 0.3s ease;
 }
-.social-btn:hover { background: var(--forest-green); color: var(--bg-pearl); }
+.social-btn:hover { 
+    background: var(--forest-green); 
+    color: var(--bg-pearl); 
+}
 
 /* --- STRICT DARK FOOTER --- */
 .footer-dark {
@@ -401,8 +454,11 @@ nav a:hover {
 .footer-bottom { border-top: 1px solid #222; padding-top: 30px; text-align: center; color: #666; font-size: 0.8rem; letter-spacing: 1px; }
 .footer-bottom a { color: #ffffff; text-decoration: none; font-weight: 600;}
 
-/* Responsive Adjustments */
+/* =========================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ========================================= */
 @media (max-width: 768px) {
+    /* Nav */
     nav {
         padding: 15px 10px;
         justify-content: flex-start; 
@@ -414,14 +470,25 @@ nav a:hover {
     nav::-webkit-scrollbar { display: none; }
     nav a { margin: 0 10px; font-size: 0.7rem; }
 
+    /* Welcome & Hero */
+    .hero h1 { font-size: 2.2rem; }
     .welcome-section { padding: 0 20px; margin: 80px auto; }
     .welcome-text h2 { font-size: 1.8rem; letter-spacing: 4px; }
-    .footer-grid { flex-direction: column; text-align: center; }
-    .hero h1 { font-size: 2.2rem; }
+    
+    /* Metrics */
     .metrics-glass-box { padding: 40px 20px; }
     .metric-circle { width: 280px; height: 280px; }
+
+    /* Rituals & Press */
+    .editorial-heading, .press-heading { font-size: 1.8rem; }
+    .press-grid { grid-template-columns: 1fr; gap: 40px; } /* Stacks quotes on phone */
+
+    /* Socials */
+    .socials-heading { font-size: 1.8rem; letter-spacing: 4px; }
+    .socials-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* 2x2 grid on phone */
     .social-buttons { flex-direction: column; align-items: center; }
-    .social-btn { width: 200px; }
-    .editorial-heading { font-size: 1.8rem; }
-    .press-grid { grid-template-columns: 1fr; gap: 40px; }
+    .social-btn { width: 200px; text-align: center; }
+
+    /* Footer */
+    .footer-grid { flex-direction: column; text-align: center; }
 }
