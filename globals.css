@@ -1357,11 +1357,23 @@ nav a:hover {
     .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
     .timeline-item::after, .timeline-item.right::after { left: 12px; }
 
-    /* Press Page Mobile Fixes */
-    .glass-article, .glass-article.reverse { flex-direction: column; margin-bottom: 40px; }
+        /* Press Page Mobile Fixes */
+    .glass-article, .glass-article.reverse { 
+        flex-direction: column; 
+        margin-bottom: 40px; 
+        width: 100%; 
+        box-sizing: border-box; /* Stops the box from bleeding outward */
+    }
     .article-image-box { width: 100%; height: 250px; }
     .article-image-box img { min-height: 250px; }
-    .article-content { width: 100%; padding: 30px 20px; text-align: center; }
+    .article-content { 
+        width: 100%; 
+        padding: 30px 15px; /* Slightly tighter padding for phones */
+        text-align: center; 
+        box-sizing: border-box; 
+        overflow-wrap: break-word; /* Forces long words to wrap securely */
+    }
+    .article-title { font-size: 1.5rem; } /* Slightly smaller to fit phone screens perfectly */
     .read-more { justify-content: center; }
     .final-quote-text { font-size: 1.6rem; }
 
