@@ -305,7 +305,6 @@ nav a:hover {
     padding: 150px 20px;
     background: url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Payment%20background.jpg') center/cover no-repeat;
 }
-/* Dark warm overlay */
 .press-section::before {
     content: '';
     position: absolute;
@@ -321,16 +320,16 @@ nav a:hover {
 }
 .press-heading {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200; /* Ultra-thin */
+    font-weight: 200; 
     font-size: 2.5rem;
     color: #FFFFFF;
     margin-bottom: 70px;
-    letter-spacing: 8px; /* Elegant, wide spacing */
-    text-transform: uppercase; /* Forced capitals */
+    letter-spacing: 8px; 
+    text-transform: uppercase; 
 }
 .press-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* STRICTLY forces 1 row of 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 50px;
 }
 .press-card {
@@ -363,14 +362,13 @@ nav a:hover {
 /* --- STAGGERED SLIDE-IN ANIMATION --- */
 .press-card.slide-in {
     opacity: 0;
-    transform: translateX(40px); /* Sets them up to slide in from the right */
+    transform: translateX(40px); 
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .press-card.slide-in.show {
     opacity: 1;
-    transform: translateX(0); /* Snaps them into their final position */
+    transform: translateX(0); 
 }
-/* The magic that makes them enter one by one */
 .press-card.slide-in:nth-child(1) { transition-delay: 0s; }
 .press-card.slide-in:nth-child(2) { transition-delay: 0.2s; }
 .press-card.slide-in:nth-child(3) { transition-delay: 0.4s; }
@@ -405,7 +403,6 @@ nav a:hover {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    /* Magic Mobile Nav Fix */
     nav {
         padding: 15px 10px;
         justify-content: flex-start; 
@@ -417,7 +414,6 @@ nav a:hover {
     nav::-webkit-scrollbar { display: none; }
     nav a { margin: 0 10px; font-size: 0.7rem; }
 
-    /* Other mobile adjustments */
     .welcome-section { padding: 0 20px; margin: 80px auto; }
     .welcome-text h2 { font-size: 1.8rem; letter-spacing: 4px; }
     .footer-grid { flex-direction: column; text-align: center; }
@@ -427,5 +423,5 @@ nav a:hover {
     .social-buttons { flex-direction: column; align-items: center; }
     .social-btn { width: 200px; }
     .editorial-heading { font-size: 1.8rem; }
-    .press-grid { gap: 40px; }
+    .press-grid { grid-template-columns: 1fr; gap: 40px; }
 }
