@@ -120,11 +120,21 @@
     </section>
 
     <section class="socials-section">
-        <h2>Connect With Us</h2>
-        <div class="social-buttons">
-            <a href="#" class="social-btn">Instagram</a>
-            <a href="#" class="social-btn">Facebook</a>
-            <a href="#" class="social-btn">TikTok</a>
+        <div class="container text-center">
+            <h2 class="socials-heading">JOIN OUR SANCTUARY</h2>
+            <a href="#" class="social-handle">@mediloopspa</a>
+            
+            <div class="socials-grid">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spa aesthetic 1" class="social-img">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spa aesthetic 2" class="social-img">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spa aesthetic 3" class="social-img">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spa aesthetic 4" class="social-img">
+            </div>
+
+            <div class="social-buttons">
+                <a href="#" class="social-btn">Instagram</a>
+                <a href="#" class="social-btn">Facebook</a>
+            </div>
         </div>
     </section>
 
@@ -153,7 +163,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Metric Counters Logic
             const counters = document.querySelectorAll('.metric-number');
             const animateCounters = () => {
                 counters.forEach(counter => {
@@ -183,10 +192,8 @@
                 });
             };
 
-            // 2. Slide-In Reviews Logic
             const slideElements = document.querySelectorAll('.slide-in');
 
-            // 3. Observer to trigger animations when scrolling
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if(entry.isIntersecting && entry.target.classList.contains('metrics-section')) {
@@ -200,11 +207,9 @@
                 });
             }, { threshold: 0.2 }); 
 
-            // Attach observer to metrics
             const metricsSection = document.querySelector('.metrics-section');
             if(metricsSection) observer.observe(metricsSection);
 
-            // Attach observer to review cards
             slideElements.forEach(el => observer.observe(el));
         });
     </script>
