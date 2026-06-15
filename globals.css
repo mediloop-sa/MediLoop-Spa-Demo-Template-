@@ -23,11 +23,10 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-pearl);
     color: var(--forest-green);
-    padding-top: 60px; 
     line-height: 1.8;
 }
 
-h1, h2, h3, h4, .btn, .metric-number {
+h1, h2, h3, h4, .btn, .btn-glass-hero, .metric-number {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
 }
@@ -41,14 +40,12 @@ h1, h2, h3, h4, .btn, .metric-number {
     text-align: center;
 }
 
-/* --- PERFECTED NAVIGATION BAR --- */
+/* --- PERFECTED TRANSPARENT NAVIGATION BAR --- */
 nav {
-    position: fixed;
+    position: absolute; /* Keeps it purely at the top of the page without following down */
     top: 0; left: 0; width: 100%;
-    background-color: rgba(0, 0, 0, 0.98); 
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    padding: 20px 0;
+    background-color: transparent; /* Completely clear */
+    padding: 30px 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -65,6 +62,7 @@ nav a {
     white-space: nowrap; 
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ensures text is visible over the image */
 }
 nav a:hover {
     color: var(--forest-green);
@@ -80,7 +78,6 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     position: relative;
-    margin-top: -60px; 
 }
 .hero::before {
     content: '';
@@ -105,6 +102,33 @@ nav a:hover {
     margin-bottom: 40px;
     color: #FFFFFF;
 }
+
+/* --- THE NEW GLASSMORPHIC HERO BUTTON --- */
+.btn-glass-hero {
+    display: inline-block;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid var(--forest-green); /* Thick green border */
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4); 
+}
+.btn-glass-hero:hover {
+    background: var(--forest-green);
+    color: var(--bg-pearl);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(26, 54, 34, 0.3);
+}
+
+/* Regular button style kept for other elements if needed */
 .btn {
     display: inline-block;
     padding: 15px 70px; 
@@ -1227,7 +1251,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: -60px; 
     padding-top: 60px;
 }
 .hero-split {
@@ -1309,7 +1332,7 @@ nav a:hover {
     .hero h1 { font-size: 2.2rem; }
     .welcome-section { padding: 0 20px; margin: 80px auto; }
     .welcome-text h2 { font-size: 1.8rem; letter-spacing: 4px; }
-    
+
     /* Metrics */
     .metrics-glass-box { padding: 40px 20px; }
     .metric-circle { width: 280px; height: 280px; }
@@ -1351,15 +1374,15 @@ nav a:hover {
     .curation-img { width: 100%; height: 350px; }
     .curation-card { width: 90%; margin-left: 0; margin-top: -50px; padding: 30px; text-align: center; }
     .curation-block.reverse .curation-card { margin-right: 0; }
-    
+
     .passport-timeline::after { left: 20px; } 
 
-/* Moves thread to the left */
+    /* Moves thread to the left */
     .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; margin-bottom: 40px; }
     .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
     .timeline-item::after, .timeline-item.right::after { left: 12px; }
 
-        /* Press Page Mobile Fixes */
+    /* Press Page Mobile Fixes */
     .glass-article, .glass-article.reverse { 
         flex-direction: column; 
         margin-bottom: 40px; 
