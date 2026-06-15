@@ -2,7 +2,7 @@
    MASTER SPA TEMPLATE STYLES
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@200;300;400;600&family=Open+Sans:wght@300;400;600&display=swap');
 
 :root {
     --bg-pearl: #FDFDFD;
@@ -88,19 +88,47 @@ nav a:hover {
 .hero-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 200; 
-    margin-bottom: 10px;
-    letter-spacing: 4px;
+.hero-pre-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
     color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.hero-main-title {
+    margin: 0 0 20px 0;
+    line-height: 0.8; /* Pulls the words closer together */
+    text-align: center;
+}
+.serif-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+}
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 7.5rem; /* Massive flowing script */
+    font-weight: 400;
+    color: #FFFFFF;
+    display: block;
+    margin-top: -25px; /* Overlaps it over the serif text */
+    margin-left: 60px; /* Pushes it slightly right for asymmetry */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Adds the subtle glow from the photo */
 }
 .hero-quote {
-    font-size: 1.1rem;
-    font-style: italic;
+    font-size: 1rem;
+    font-weight: 300;
     margin-bottom: 40px;
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 1px;
 }
 
 /* --- THE NEW GLASSMORPHIC HERO BUTTON --- */
@@ -1328,8 +1356,10 @@ nav a:hover {
     nav::-webkit-scrollbar { display: none; }
     nav a { margin: 0 10px; font-size: 0.7rem; }
 
-    /* Welcome & Hero */
-    .hero h1 { font-size: 2.2rem; }
+         /* Welcome & Hero */
+    .hero-pre-title { font-size: 0.75rem; letter-spacing: 5px; }
+    .serif-title { font-size: 2.5rem; letter-spacing: 2px; }
+    .script-title { font-size: 5rem; margin-top: -15px; margin-left: 30px; }
     .welcome-section { padding: 0 20px; margin: 80px auto; }
     .welcome-text h2 { font-size: 1.8rem; letter-spacing: 4px; }
 
