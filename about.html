@@ -8,7 +8,6 @@
 </head>
 <body>
 
-            <!-- PERFECTED NAVIGATION BAR -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -17,43 +16,35 @@
         <a href="press.html">Press</a>
     </nav>
 
-        <!-- NEW SPLIT EDITORIAL HERO -->
     <header class="hero subpage-hero-new">
         <div class="container hero-split">
-            <!-- Left Side: Typography -->
             <div class="hero-left">
                 <h1>OUR STORY</h1>
                 <hr class="hero-line">
                 <p>The philosophy of absolute peace.</p>
             </div>
-            <!-- Right Side: Glassmorphic CTA -->
             <div class="hero-right">
                 <a href="#" class="btn-glass">CONTACT US</a>
             </div>
         </div>
     </header>
 
-    <!-- THE PHILOSOPHY (STICKY TEXT + INFINITE SCROLL) -->
     <section class="philosophy-sticky-section">
         <div class="container philosophy-grid">
-            <!-- Left Side: Pinned Text -->
             <div class="philosophy-text-wrapper">
                 <div class="philosophy-text-sticky">
-                    <h2 class="editorial-heading" style="color: var(--forest-green); margin-bottom: 30px;">THE PHILOSOPHY</h2>
+                    <h2 class="editorial-heading" style="color: var(--brand-anchor); margin-bottom: 30px;">THE PHILOSOPHY</h2>
                     <p>We believe that wellness is a deeply personal journey. Founded on the principles of holistic healing, our sanctuary was designed to be an absolute refuge from the relentless noise of the outside world.</p>
                     <p>Our expert therapists use organic, locally-sourced botanicals to craft treatments that not only relax the physical body but entirely restore the mind. Every detail—from the pearl white walls to the curated acoustic environment—has been meticulously designed to bring you back to your true center.</p>
                 </div>
             </div>
-            
-            <!-- Right Side: Infinite Vertical Scroll Window -->
+
             <div class="philosophy-image-window">
                 <div class="philosophy-image-track">
-                    <!-- Original Set -->
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Spa Detail" class="scroll-img">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media.png" alt="Spa Detail" class="scroll-img">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Spa Detail" class="scroll-img">
-                    
-                    <!-- Exact Duplicate Set to create the seamless infinite loop -->
+
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" alt="Spa Detail" class="scroll-img">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media.png" alt="Spa Detail" class="scroll-img">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png" alt="Spa Detail" class="scroll-img">
@@ -62,7 +53,6 @@
         </div>
     </section>
 
-    <!-- THE ELEGANT QUOTE BREAK (SLICK FADING LINES) -->
     <section class="quote-break-section">
         <div class="container text-center">
             <hr class="slick-fade-line">
@@ -72,17 +62,13 @@
         </div>
     </section>
 
-       <!-- THE ARTISANS OF CALM (EXPANDING ACCORDION) -->
     <section class="accordion-section">
         <div class="container">
-            <!-- Adjusted margin-bottom to 15px to keep the hint close to the heading -->
-            <h2 class="editorial-heading text-center" style="color: var(--forest-green); margin-bottom: 15px;">OUR PROMISE</h2>
-            
-            <!-- The new delicate hint -->
+            <h2 class="editorial-heading text-center" style="color: var(--brand-anchor); margin-bottom: 15px;">OUR PROMISE</h2>
+
             <p class="accordion-hint text-center">Hover or tap to explore</p>
-            
+
             <div class="accordion-container">
-                <!-- Accordion 1 -->
                 <div class="accordion-item">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/SocialMedia3.png" alt="Mission">
                     <div class="accordion-overlay">
@@ -93,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Accordion 2 -->
                 <div class="accordion-item">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%204.png" alt="Vision">
                     <div class="accordion-overlay">
@@ -104,7 +89,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Accordion 3 -->
                 <div class="accordion-item">
                     <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%202.png" alt="Promise">
                     <div class="accordion-overlay">
@@ -119,7 +103,6 @@
         </div>
     </section>
 
-    <!-- THE MANIFESTO MARQUEE (SLIM & PILL SHAPED) -->
     <section class="manifesto-marquee">
         <div class="marquee-bg">
             <span>RESTORE • RECONNECT • RENEW • RESTORE • RECONNECT • RENEW •</span>
@@ -129,7 +112,18 @@
         </div>
     </section>
 
-    <!-- STRICT DARK FOOTER -->
+    <section class="newsletter-section" style="background-color: var(--brand-canvas); padding: 80px 20px; border-top: 1px solid rgba(46, 26, 41, 0.05);">
+        <div class="container text-center" style="max-width: 600px;">
+            <h2 class="editorial-heading" style="color: var(--brand-anchor); margin-bottom: 15px; font-size: 1.8rem;">THE INNER CIRCLE</h2>
+            <p style="color: var(--text-main); margin-bottom: 30px; font-size: 0.9rem;">Subscribe for exclusive seasonal curations and sanctuary news.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <input type="email" id="subscriber-email" placeholder="Your email address" style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 30px; border: 1px solid rgba(46, 26, 41, 0.2); outline: none; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; background: transparent; color: var(--text-main);">
+                <button onclick="submitEmail()" style="background: var(--brand-anchor); color: var(--brand-canvas); border: none; padding: 15px 35px; border-radius: 30px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: bold; transition: transform 0.3s;">Join</button>
+            </div>
+            <p id="subscription-msg" style="font-size: 0.8rem; margin-top: 15px; display: none;"></p>
+        </div>
+    </section>
+
     <footer class="footer-dark">
         <div class="footer-grid">
             <div class="footer-col">
@@ -153,5 +147,67 @@
         </div>
     </footer>
 
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: var(--brand-anchor); color: var(--brand-canvas); padding: 15px 20px; text-align: center; z-index: 9999; font-family: 'Open Sans', sans-serif; font-size: 0.85rem; box-sizing: border-box; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+        <span>We use cookies to ensure you get the best experience on our website.</span>
+        <button onclick="acceptCookies()" style="padding: 8px 25px; background: var(--brand-canvas); color: var(--brand-anchor); border: none; border-radius: 20px; cursor: pointer; font-weight: 600; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.7rem; transition: transform 0.3s;">Got it</button>
+    </div>
+
+    <script>
+        // Cookie Banner Logic
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+        window.onload = function() {
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) banner.style.display = 'none';
+            }
+        };
+
+        // Newsletter Logic
+        async function submitEmail() {
+            const emailInput = document.getElementById('subscriber-email');
+            const msgBox = document.getElementById('subscription-msg');
+            const email = emailInput.value.trim();
+
+            if (!email || !email.includes('@')) {
+                msgBox.style.display = 'block';
+                msgBox.style.color = '#ff6b6b';
+                msgBox.innerText = "Please enter a valid email address.";
+                return;
+            }
+
+            // REMINDER: Replace these with your actual Supabase Keys and set up Vercel Environment Variables!
+            const supabaseUrl = 'https://vafzjdqepmuunwqhzunz.supabase.co';
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhZnpqZHFlcG11dW53cWh6dW56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4MTQyMjMsImV4cCI6MjA5MjM5MDIyM30.GlZa2vxvM6gFQ0iQes2ZV6twO3ASxLayuoZJsEyZNSQ';
+
+            try {
+                const response = await fetch(`${supabaseUrl}/rest/v1/mailing_list`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': supabaseKey,
+                        'Authorization': `Bearer ${supabaseKey}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({ email_address: email })
+                });
+
+                if (response.ok) {
+                    msgBox.style.display = 'block';
+                    msgBox.style.color = 'var(--brand-accent)'; 
+                    msgBox.innerText = "Welcome to the Inner Circle.";
+                    emailInput.value = ''; 
+                } else {
+                    throw new Error("Already subscribed or network error.");
+                }
+            } catch (error) {
+                msgBox.style.display = 'block';
+                msgBox.style.color = 'var(--brand-medium)'; 
+                msgBox.innerText = "You are already on our list, or an error occurred.";
+            }
+        }
+    </script>
 </body>
 </html>
